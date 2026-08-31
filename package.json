@@ -1,0 +1,12 @@
+{
+  "name": "landing-page-tool",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "puppeteer": "^23.0.0"
+  },
+  "allowScripts": {
+    "puppeteer@23.11.1": true
+  }
+}

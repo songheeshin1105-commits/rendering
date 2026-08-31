@@ -1,0 +1,22 @@
+<!--
+  차별화 비교 섹션 — 우리 상품 vs 다른 상품
+  치환 토큰: {{MAIN_COLOR}} {{DIFF_TITLE}} {{DIFF_ROWS}} (표 행)
+-->
+<div style="padding:40px 24px; background:#fff;">
+  <h2 style="font-size:20px; font-weight:700; color:#222; text-align:center; margin:0 0 20px;">{{DIFF_TITLE}}</h2>
+  <table style="width:100%; border-collapse:collapse; font-size:14px;">
+    <tr style="background:#f7f7f7;">
+      <th style="padding:12px; text-align:left; color:#999; font-weight:600;">비교 항목</th>
+      <th style="padding:12px; text-align:center; color:#999; font-weight:600;">다른 상품</th>
+      <th style="padding:12px; text-align:center; color:{{MAIN_COLOR}}; font-weight:700;">우리 상품</th>
+    </tr>
+    {{DIFF_ROWS}}
+    <!-- 예시 행:
+    <tr style="border-bottom:1px solid #eee;">
+      <td style="padding:12px; color:#444;">원재료</td>
+      <td style="padding:12px; text-align:center; color:#999;">일반</td>
+      <td style="padding:12px; text-align:center; color:{{MAIN_COLOR}}; font-weight:700;">국내산 100%</td>
+    </tr>
+    -->
+  </table>
+</div>

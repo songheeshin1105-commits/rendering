@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>고순 GOSOON — 세상에서 가장 신선한 들기름</title>
+<style>
+  @font-face { font-family:'Mendl Sans Dawn'; src:url('../brand-font/Mendl_Sans_Dawn_Light.otf'); font-weight:300; font-display:swap; }
+  @font-face { font-family:'Mendl Sans Dawn'; src:url('../brand-font/Mendl_Sans_Dawn_Regular.otf'); font-weight:400; font-display:swap; }
+  @font-face { font-family:'Mendl Sans Dawn'; src:url('../brand-font/Mendl_Sans_Dawn_Medium.otf'); font-weight:500; font-display:swap; }
+  @font-face { font-family:'EBS훈민정음새론'; src:url('../brand-font/EBS훈민정음새론L.ttf'); font-weight:300; font-display:swap; }
+  @font-face { font-family:'EBS훈민정음새론'; src:url('../brand-font/EBS훈민정음새론R.ttf'); font-weight:400; font-display:swap; }
+  @font-face { font-family:'EBS훈민정음새론'; src:url('../brand-font/EBS훈민정음새론SB.ttf'); font-weight:700; font-display:swap; }
+
+  :root{
+    --olive:#e4dfac; --sage:#cad3cf; --ink:#36302c; --cream:#fefcf6; --coral:#ea4c36;
+    --paper:#f4f0e4; --line:#e5e0d2;
+    --latin:'Mendl Sans Dawn','EBS훈민정음새론',sans-serif;
+    --kr:'EBS훈민정음새론','Mendl Sans Dawn',sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--cream); color:var(--ink); font-family:var(--kr); font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;}
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+  /* Mendl Sans Dawn 의 대문자 S 가 장식 글리프(/처럼 보임)라 라틴 라벨은 한글 폰트로 렌더 */
+  .eyebrow{font-family:var(--kr); font-weight:400; letter-spacing:.22em; text-transform:uppercase; font-size:12px; color:#8a8172; margin:0 0 14px;}
+  .serif{font-family:var(--latin); font-weight:300; letter-spacing:.01em; line-height:1.15;}
+  .ph{background:var(--paper); border:1px dashed #c9c2ad; border-radius:10px; display:flex; align-items:center; justify-content:center; text-align:center; color:#9a9078; font-size:13px; font-family:var(--kr); padding:24px;}
+
+  /* header */
+  header{position:sticky; top:0; z-index:50; background:rgba(254,252,246,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; height:64px;}
+  .nav img{height:26px;}
+  .nav ul{display:flex; gap:30px; list-style:none; margin:0; padding:0; font-size:14px;}
+  .nav .buy{border:1px solid var(--ink); border-radius:999px; padding:8px 18px; font-size:13px; letter-spacing:.02em;}
+  .nav .menu{display:none;}
+
+  /* hero */
+  .hero{display:grid; grid-template-columns:1.15fr .85fr; min-height:min(78vh,640px);}
+  .hero .shot{background:var(--olive); display:flex; align-items:center; justify-content:center; padding:40px;}
+  .hero .shot img{max-height:520px; width:auto; filter:drop-shadow(0 24px 40px rgba(54,48,44,.18));}
+  .hero .panel{background:var(--paper); display:flex; flex-direction:column; justify-content:center; padding:56px;}
+  .hero .panel h1{font-size:clamp(30px,4vw,52px); margin:0 0 20px;}
+  .hero .panel .kr{font-family:var(--kr); font-weight:700; font-size:clamp(20px,2.4vw,26px); margin:0 0 18px; letter-spacing:.04em;}
+  .hero .panel p{margin:0 0 28px; color:#5f574c; max-width:34ch;}
+  .btn{display:inline-block; background:var(--ink); color:var(--cream); padding:15px 30px; border-radius:999px; font-size:15px; letter-spacing:.03em; width:fit-content;}
+  .btn.coral{background:var(--coral);}
+
+  section{padding:88px 0;}
+  .sec-head{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:40px;}
+  .sec-head h2{font-size:clamp(24px,3vw,36px); margin:0; font-weight:700;}
+  .sec-head .serif{font-size:clamp(24px,3vw,36px);}
+
+  /* editorial strip */
+  .strip{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; grid-auto-rows:1fr;}
+  .strip .tall{grid-row:span 2;}
+  .strip .card{background:var(--sage); border-radius:10px; min-height:190px; padding:26px; display:flex; align-items:flex-end; color:var(--ink); font-size:15px; line-height:1.5;}
+  .strip .quote{background:var(--ink); color:var(--cream);}
+  .strip .quote .serif{font-size:18px; display:block; margin-bottom:8px; line-height:1.3;}
+
+  /* product showcase */
+  .shop{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;}
+  .shop .feature{background:var(--olive); border-radius:14px; aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; padding:40px;}
+  .shop .feature img{max-height:100%; width:auto; filter:drop-shadow(0 20px 30px rgba(54,48,44,.18));}
+  .plist{list-style:none; margin:0; padding:0;}
+  .plist li{display:flex; gap:18px; align-items:center; padding:20px 0; border-bottom:1px solid var(--line);}
+  .plist li:first-child{border-top:1px solid var(--line);}
+  .plist .thumb{width:76px; height:76px; border-radius:8px; background:var(--paper); flex:0 0 auto; display:flex; align-items:center; justify-content:center; overflow:hidden;}
+  .plist .thumb img{width:100%; height:100%; object-fit:cover;}
+  .plist .info{flex:1;}
+  .plist .info b{display:block; font-size:17px; margin-bottom:3px;}
+  .plist .info span{font-size:14px; color:#8a8172;}
+  .plist .go{font-family:var(--latin); font-size:13px; letter-spacing:.12em; text-transform:uppercase; white-space:nowrap;}
+
+  /* story */
+  .story{background:var(--paper);}
+  .story .wrap{max-width:760px; text-align:center;}
+  .story p{font-size:clamp(16px,1.5vw,18px); line-height:1.9; color:#4c453c; margin:0;}
+
+  /* benefits */
+  .benefits{display:grid; grid-template-columns:repeat(3,1fr); gap:32px;}
+  .benefits .b{border-top:2px solid var(--ink); padding-top:20px;}
+  .benefits .b .n{font-family:var(--latin); font-size:14px; letter-spacing:.1em; color:#8a8172; margin:0 0 10px;}
+  .benefits .b h3{font-size:19px; margin:0 0 8px;}
+  .benefits .b p{margin:0; font-size:15px; color:#5f574c; line-height:1.6;}
+
+  /* magazine / usage */
+  .mag{background:var(--ink); color:var(--cream);}
+  .mag .serif{color:var(--cream); text-align:center; font-size:clamp(30px,5vw,56px); margin:0 0 12px;}
+  .mag .lead{text-align:center; color:#cfc7ba; max-width:46ch; margin:0 auto 48px;}
+  .mgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .mgrid .m .box{aspect-ratio:1/1; border-radius:10px; background:#4a423b; border:1px dashed #6a6157; display:flex; align-items:center; justify-content:center; color:#9a9078; font-size:13px; text-align:center; padding:20px;}
+  .mgrid .m p{margin:12px 0 0; font-size:14px; color:#cfc7ba;}
+  .mgrid .m .tag{color:var(--coral); font-weight:700; font-size:12px; letter-spacing:.08em;}
+
+  /* newsletter */
+  .news{background:var(--olive); text-align:center;}
+  .news h2{font-size:clamp(22px,2.6vw,30px); margin:0 0 10px;}
+  .news p{margin:0 0 24px; color:#5f574c;}
+  .news form{display:flex; gap:10px; max-width:420px; margin:0 auto;}
+  .news input{flex:1; border:1px solid var(--ink); background:transparent; border-radius:999px; padding:13px 20px; font-size:15px; font-family:var(--kr); color:var(--ink);}
+  .news button{border:none; background:var(--ink); color:var(--cream); border-radius:999px; padding:13px 24px; font-size:15px; cursor:pointer;}
+
+  /* footer */
+  footer{background:#211d1a; color:#a79f93; padding:64px 0 40px; font-size:13px;}
+  footer .top{display:flex; justify-content:space-between; gap:32px; flex-wrap:wrap; padding-bottom:32px; border-bottom:1px solid #3a342f;}
+  footer .cols{display:flex; gap:56px; flex-wrap:wrap;}
+  footer h4{font-family:var(--kr); font-weight:400; letter-spacing:.14em; text-transform:uppercase; font-size:12px; color:#cfc7ba; margin:0 0 12px;}
+  footer ul{list-style:none; margin:0; padding:0; line-height:2;}
+  footer .brand .serif{color:var(--cream); font-size:26px; margin-bottom:10px;}
+  footer .legal{padding-top:24px; line-height:1.9;}
+
+  @media (max-width:860px){
+    section{padding:60px 0;}
+    .nav ul,.nav .buy{display:none;}
+    .nav .menu{display:block; font-size:24px;}
+    .hero{grid-template-columns:1fr; min-height:0;}
+    .hero .shot{padding:48px 24px;}
+    .hero .shot img{max-height:360px;}
+    .hero .panel{padding:40px 24px;}
+    .sec-head{flex-direction:column; align-items:flex-start; gap:8px; margin-bottom:28px;}
+    .strip{grid-template-columns:1fr 1fr;}
+    .strip .tall{grid-row:auto;}
+    .shop{grid-template-columns:1fr; gap:28px;}
+    .benefits{grid-template-columns:1fr;}
+    .mgrid{grid-template-columns:1fr;}
+    .news form{flex-direction:column;}
+    footer .top{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top"><img src="../brand/logo/logo.png" alt="고순 GOSOON" onerror="this.outerHTML='&lt;span style=&quot;font-family:var(--latin);font-size:22px;letter-spacing:.24em&quot;&gt;gosoon&lt;/span&gt;'"></a>
+    <ul>
+      <li><a href="#story">브랜드 이야기</a></li>
+      <li><a href="들기름.html">들기름</a></li>
+      <li><a href="#usage">사용법</a></li>
+      <li><a href="#news">소식</a></li>
+    </ul>
+    <a class="buy" href="들기름.html">구매하기</a>
+    <span class="menu">≡</span>
+  </div>
+</header>
+
+<a id="top"></a>
+<!-- 1. 히어로 -->
+<div class="hero">
+  <div class="shot">
+    <img src="../product-image/아향긋해들기름제품사진.png" alt="고순 아향긋해 들기름"
+         onerror="this.parentNode.innerHTML='&lt;div class=\'ph\' style=\'width:100%;height:100%\'&gt;여기에 제품 사진을 넣으세요&lt;/div&gt;'">
+  </div>
+  <div class="panel">
+    <p class="eyebrow">Gosoon · Fresh Perilla Oil</p>
+    <h1 class="serif">A time to<br>taste something<br>truly fresh</h1>
+    <p class="kr">세상에서 가장 신선한 들기름</p>
+    <p>그저 고소하기만 한 들기름이 아니라, 올리브오일처럼 향긋하게 즐기는 들기름. 고순이 직접 짰습니다.</p>
+    <a class="btn coral" href="들기름.html">들기름 보러가기</a>
+  </div>
+</div>
+
+<!-- 2. 에디토리얼 스트립 -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">A time to reconnect</p>
+        <h2 class="serif">밥 한 공기,<br>들기름 한 스푼</h2>
+      </div>
+    </div>
+    <div class="strip">
+      <div class="ph tall" style="min-height:396px;">여기에 밥에 들기름을 비비는 사진을 넣으세요</div>
+      <div class="card">따뜻한 흰쌀밥에 들기름을 두르면<br>그 자체로 한 끼가 됩니다</div>
+      <div class="card quote"><span class="serif">“반찬이 필요 없더라고요”</span>밥에 비벼 김에 싸 먹은 첫 끼의 후기</div>
+      <div class="ph" style="min-height:190px;">여기에 김에 싸 먹는 사진을 넣으세요</div>
+      <div class="ph" style="min-height:190px;">여기에 들기름을 두른 요리 사진을 넣으세요</div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. 상품 -->
+<section style="background:var(--paper);">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Shop</p>
+        <h2>제철 식탁을 위한 들기름</h2>
+      </div>
+      <a class="go" href="들기름.html" style="font-family:var(--latin);letter-spacing:.14em;text-transform:uppercase;font-size:13px;">View all →</a>
+    </div>
+    <div class="shop">
+      <div class="feature">
+        <img src="../product-image/아향긋해들기름제품사진.png" alt="고순 들기름 180ml"
+             onerror="this.parentNode.innerHTML='&lt;div class=\'ph\' style=\'width:100%;height:100%\'&gt;여기에 제품 사진을 넣으세요&lt;/div&gt;'">
+      </div>
+      <ul class="plist">
+        <li>
+          <a href="들기름.html" class="thumb"><img src="../product-image/아향긋해들기름제품사진.png" alt="들기름" onerror="this.parentNode.textContent='사진'"></a>
+          <div class="info"><b>아향긋해 들기름 180ml</b><span>깊은 향, 깔끔한 뒷맛 — 갓 짠 신선한 들기름</span></div>
+          <a href="들기름.html" class="go">자세히 →</a>
+        </li>
+        <li>
+          <span class="thumb">준비 중</span>
+          <div class="info"><b>직접 압착 들기름 · 로스팅 김</b><span>오프라인에서 만나요 — 준비 중</span></div>
+          <span class="go" style="color:#b8b0a0;">Coming</span>
+        </li>
+        <li>
+          <span class="thumb">준비 중</span>
+          <div class="info"><b>제철 솥밥 세트</b><span>매달 다른 제철 솥밥 — 준비 중</span></div>
+          <span class="go" style="color:#b8b0a0;">Coming</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 4. 브랜드 스토리 -->
+<section class="story" id="story">
+  <div class="wrap">
+    <p class="eyebrow" style="text-align:center;">Our Story</p>
+    <h2 class="serif" style="font-size:clamp(26px,3.4vw,40px); margin:0 0 28px;">고순이 들기름을<br>짜게 된 이유</h2>
+    <p>기존에 알던 들기름은 그저 “고소하다”에서 끝났습니다. 그러던 어느 날, 올리브오일처럼 향긋한 들기름을 맛보는 경험을 하게 되었고, 그런 들기름이라면 어디에든 넣어 먹고 싶다는 생각이 들었습니다. 들기름은 오메가3가 풍부한 기름이자 한국의 전통 K-OIL이라는 점에서도 매력을 느꼈습니다. 그 향과 맛을 그대로 담아, 고순은 오늘도 신선한 들기름을 짜고 있습니다.</p>
+  </div>
+</section>
+
+<!-- 5. 특징 3 -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><div><p class="eyebrow">Why Gosoon</p><h2>세 가지가 다릅니다</h2></div></div>
+    <div class="benefits">
+      <div class="b"><p class="n">01</p><h3>깊은 향, 깔끔한 뒷맛</h3><p>올리브오일처럼 향긋하게 즐기는 들기름. 향은 진하고 뒷맛은 깔끔합니다.</p></div>
+      <div class="b"><p class="n">02</p><h3>오메가3 풍부한 K-OIL</h3><p>몸에도 좋고 맛도 좋은 우리 전통 기름을 매일 식탁에서 만나보세요.</p></div>
+      <div class="b"><p class="n">03</p><h3>어디든 넣고 싶은 향</h3><p>나물 무침을 넘어 밥, 국수, 볶음 마무리까지 어디에나 곁들이고 싶어집니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. 매거진 / 사용법 -->
+<section class="mag" id="usage">
+  <div class="wrap">
+    <p class="eyebrow" style="text-align:center;">Gosoon Magazine</p>
+    <h2 class="serif">제철 솥밥 매거진</h2>
+    <p class="lead">복잡한 레시피는 필요 없습니다. 흰쌀밥에 들기름을 비벼 김에 싸 드세요. 매달 다른 제철 솥밥 이야기를 준비하고 있습니다.</p>
+    <div class="mgrid">
+      <div class="m"><div class="box">여기에 밥+들기름+김 사진을 넣으세요</div><p><span class="tag">가장 쉬운 사용법</span><br>흰쌀밥에 한 스푼, 김에 싸서 끝</p></div>
+      <div class="m"><div class="box">준비 중</div><p><span class="tag">준비 중</span><br>봄 제철 솥밥 — 냉이와 들기름</p></div>
+      <div class="m"><div class="box">준비 중</div><p><span class="tag">준비 중</span><br>직접 압착 들기름 · 로스팅 김 이야기</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. 소식 신청 -->
+<section class="news" id="news">
+  <div class="wrap">
+    <p class="eyebrow" style="text-align:center;">Gosoon Letter</p>
+    <h2>새 소식을 가장 먼저 받아보세요</h2>
+    <p>제철 솥밥 콘텐츠와 오프라인 소식을 이메일로 보내드립니다.</p>
+    <form onsubmit="this.innerHTML='&lt;p style=\'margin:0\'&gt;신청해 주셔서 감사합니다. 곧 소식으로 찾아뵐게요.&lt;/p&gt;';return false;">
+      <input type="email" required placeholder="이메일 주소">
+      <button type="submit">신청</button>
+    </form>
+  </div>
+</section>
+
+<!-- 8. 푸터 -->
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <div class="serif" style="font-size:26px; letter-spacing:.24em; color:var(--cream); margin-bottom:10px;">gosoon</div>
+        세상에서 가장 신선한 들기름
+      </div>
+      <div class="cols">
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="들기름.html">아향긋해 들기름</a></li>
+            <li><a href="#news">소식 신청</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>인스타그램 · 입력 예정</li>
+            <li>연락처 · 입력 예정</li>
+            <li>이메일 · 입력 예정</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Info</h4>
+          <ul>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li>교환/반품 안내 · 입력 예정</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="legal">
+      고순 (GOSOON) · 대표자 입력 예정 · 사업자등록번호 입력 예정<br>
+      주소 입력 예정 · 통신판매업 신고번호 입력 예정<br>
+      © 2026 GOSOON. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

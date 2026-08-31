@@ -1,0 +1,58 @@
+<!--
+  통합 홈페이지 템플릿 — 브랜드 전체 소개 + 상품 목록
+  치환 토큰: {{MAIN_COLOR}} {{SUB_COLOR}} {{BG_COLOR}} {{ACCENT_COLOR}} {{BRAND_NAME}} {{LOGO_PATH}}
+             {{SLOGAN}} {{BRAND_STORY}} {{PRODUCT_CARDS}} {{CONTENT_TEASER}} {{CONTACT}} {{SNS_LINKS}} {{FOOTER_NOTICE}}
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{BRAND_NAME}}</title>
+</head>
+<body style="margin:0; padding:0; font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif; background:#eee;">
+<div style="max-width:500px; margin:0 auto; background:#fff;">
+
+  <!-- 1. 브랜드 히어로 -->
+  <div style="background:{{BG_COLOR}}; padding:56px 24px; text-align:center;">
+    <img src="{{LOGO_PATH}}" alt="{{BRAND_NAME}}" style="height:36px; margin-bottom:20px;" onerror="this.style.display='none';">
+    <p style="font-size:16px; line-height:1.6; color:#666; margin:0;">{{SLOGAN}}</p>
+  </div>
+
+  <!-- 2. 브랜드 스토리 -->
+  <div style="padding:40px 24px; background:#fff;">
+    <h2 style="font-size:20px; font-weight:700; color:#222; text-align:center; margin:0 0 20px;">브랜드 이야기</h2>
+    <p style="font-size:15px; line-height:1.8; color:#555; margin:0;">{{BRAND_STORY}}</p>
+  </div>
+
+  <!-- 3. 상품 목록 (products/ 폴더 개수만큼 반복) -->
+  <div style="padding:40px 24px; background:{{BG_COLOR}};">
+    <h2 style="font-size:20px; font-weight:700; color:#222; text-align:center; margin:0 0 24px;">상품 보기</h2>
+    {{PRODUCT_CARDS}}
+    <!-- 카드 1개 예시 (상품별 반복):
+    <a href="[상품명].html" style="display:block; text-decoration:none; background:#fff; border-radius:12px; overflow:hidden; margin-bottom:16px; box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+      <img src="../products/[상품명]/images/hero.jpg" alt="[상품명]" style="width:100%; display:block;" onerror="this.style.display='none';">
+      <div style="padding:16px;">
+        <p style="font-size:16px; font-weight:700; color:#222; margin:0 0 4px;">[상품명]</p>
+        <p style="font-size:14px; color:#888; margin:0;">한 줄 소개</p>
+      </div>
+    </a>
+    -->
+  </div>
+
+  <!-- 4. 콘텐츠/소식 (선택) -->
+  <div style="padding:40px 24px; background:#fff;">
+    <h2 style="font-size:20px; font-weight:700; color:#222; text-align:center; margin:0 0 20px;">소식</h2>
+    {{CONTENT_TEASER}}
+  </div>
+
+  <!-- 5. 연락처/SNS + Footer -->
+  <div style="padding:24px; background:#f2f2f2; text-align:center; font-size:12px; color:#999; line-height:1.8;">
+    <p style="margin:0;">{{BRAND_NAME}} | {{CONTACT}}</p>
+    <p style="margin:4px 0 0;">{{SNS_LINKS}}</p>
+    <p style="margin:4px 0 0;">{{FOOTER_NOTICE}}</p>
+  </div>
+
+</div>
+</body>
+</html>
