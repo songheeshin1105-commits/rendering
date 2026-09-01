@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>고순 들기름 레시피</title>
+<style>
+  @font-face { font-family:'Mendl Sans Dawn'; src:url('../brand-font/Mendl_Sans_Dawn_Light.otf'); font-weight:300; font-display:swap; }
+  @font-face { font-family:'Mendl Sans Dawn'; src:url('../brand-font/Mendl_Sans_Dawn_Regular.otf'); font-weight:400; font-display:swap; }
+  @font-face { font-family:'Mendl Sans Dawn'; src:url('../brand-font/Mendl_Sans_Dawn_Medium.otf'); font-weight:500; font-display:swap; }
+  @font-face { font-family:'EBS훈민정음새론'; src:url('../brand-font/EBS훈민정음새론L.ttf'); font-weight:300; font-display:swap; }
+  @font-face { font-family:'EBS훈민정음새론'; src:url('../brand-font/EBS훈민정음새론R.ttf'); font-weight:400; font-display:swap; }
+  @font-face { font-family:'EBS훈민정음새론'; src:url('../brand-font/EBS훈민정음새론SB.ttf'); font-weight:700; font-display:swap; }
+
+  :root{
+    --olive:#e4dfac; --sage:#cad3cf; --ink:#36302c; --cream:#fefcf6; --coral:#ea4c36;
+    --paper:#f4f0e4; --line:#e5e0d2;
+    --latin:'Mendl Sans Dawn','EBS훈민정음새론',sans-serif;
+    --kr:'EBS훈민정음새론','Mendl Sans Dawn',sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--cream); color:var(--ink); font-family:var(--kr); font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;}
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+  .eyebrow{font-family:var(--kr); font-weight:400; letter-spacing:.22em; text-transform:uppercase; font-size:12px; color:#8a8172; margin:0 0 14px;}
+
+  header{position:sticky; top:0; z-index:50; background:rgba(254,252,246,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; height:64px; max-width:1180px; margin:0 auto; padding:0 24px;}
+  .nav img{height:26px;}
+  .nav ul{display:flex; gap:30px; list-style:none; margin:0; padding:0; font-size:14px;}
+  .nav .buy{border:1px solid var(--ink); border-radius:999px; padding:8px 18px; font-size:13px; letter-spacing:.02em;}
+  .nav .menu{display:none;}
+
+  .intro{padding:72px 0 8px;}
+  .intro h1{font-size:clamp(30px,4vw,46px); font-weight:700; margin:0 0 14px; letter-spacing:-.01em;}
+  .intro p{font-size:clamp(16px,1.7vw,18px); color:#5f574c; margin:0; max-width:46ch;}
+  .toc{display:flex; flex-wrap:wrap; gap:10px; padding:28px 0 0;}
+  .toc a{border:1px solid var(--line); border-radius:999px; padding:8px 16px; font-size:14px; background:var(--paper);}
+  .toc a:hover{border-color:var(--ink);}
+
+  .recipe{padding:56px 0; border-top:1px solid var(--line);}
+  .recipe:first-of-type{border-top:none;}
+  .recipe h2{font-size:clamp(22px,2.6vw,30px); font-weight:700; margin:0 0 8px; scroll-margin-top:80px;}
+  .recipe .lead{color:#5f574c; margin:0 0 28px;}
+  .recipe .photo{width:100%; aspect-ratio:5/2; border-radius:12px; overflow:hidden; margin:0 0 32px; background:var(--paper);}
+  .recipe .photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .recipe .photo.ph{display:flex; align-items:center; justify-content:center; text-align:center; color:#9a9078; font-size:13px; padding:24px; border:1px dashed #c9c2ad;}
+  .rbody{display:grid; grid-template-columns:.85fr 1.4fr; gap:44px;}
+  .rbody h3{font-family:var(--kr); font-weight:700; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:#8a8172; margin:0 0 14px;}
+  .rbody ul{list-style:none; margin:0; padding:0;}
+  .rbody ul li{padding:8px 0; border-bottom:1px solid var(--line); font-size:15px;}
+  .rbody ol{margin:0; padding:0; counter-reset:s; list-style:none;}
+  .rbody ol li{counter-increment:s; position:relative; padding:0 0 16px 40px; font-size:15px; line-height:1.7;}
+  .rbody ol li::before{content:counter(s); position:absolute; left:0; top:0; width:26px; height:26px; border-radius:50%; background:var(--olive); color:var(--ink); font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center;}
+  .tip{margin:8px 0 0; padding:14px 18px; background:var(--paper); border-left:3px solid var(--coral); border-radius:0 8px 8px 0; font-size:14px; line-height:1.6; color:#4c453c;}
+  .tip b{color:var(--coral); display:block; font-size:12px; letter-spacing:.06em; margin-bottom:3px;}
+
+  .end{background:var(--olive); text-align:center; padding:64px 24px;}
+  .end p{margin:0 0 20px; font-size:18px; font-weight:700;}
+  .btn{display:inline-block; background:var(--ink); color:var(--cream); padding:14px 28px; border-radius:999px; font-size:15px; letter-spacing:.03em;}
+
+  footer{background:#211d1a; color:#a79f93; padding:56px 0 40px; font-size:13px;}
+  footer .fwrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+  footer .mark{color:var(--cream); font-family:var(--latin); font-size:24px; letter-spacing:.24em; margin-bottom:8px;}
+  footer .legal{margin-top:20px; line-height:1.9;}
+
+  @media (max-width:760px){
+    .nav ul,.nav .buy{display:none;}
+    .nav .menu{display:block; font-size:24px;}
+    .intro{padding:48px 0 0;}
+    .recipe{padding:44px 0;}
+    .rbody{grid-template-columns:1fr; gap:28px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html"><img src="../brand/logo/logo.png" alt="고순 GOSOON" onerror="this.outerHTML='&lt;span style=&quot;font-family:var(--latin);font-size:22px;letter-spacing:.24em&quot;&gt;gosoon&lt;/span&gt;'"></a>
+    <ul>
+      <li><a href="index.html#story">브랜드 이야기</a></li>
+      <li><a href="들기름.html">들기름</a></li>
+      <li><a href="레시피.html">레시피</a></li>
+      <li><a href="히스토리.html">고순 히스토리</a></li>
+      <li><a href="index.html#news">소식</a></li>
+    </ul>
+    <a class="buy" href="들기름.html#buy">구매하기</a>
+    <span class="menu">≡</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="intro">
+    <p class="eyebrow">Gosoon Recipes</p>
+    <h1>고순 들기름 레시피</h1>
+    <p>복잡할 필요 없습니다. 밥 한 공기부터 냉파스타까지, 고순 들기름을 가장 맛있게 쓰는 방법을 모았습니다.</p>
+    <div class="toc">
+      <a href="#bap-gim">흰쌀밥 + 김</a>
+      <a href="#gangdwenjang">강된장에 한 스푼</a>
+      <a href="#naeng-pasta">냉파스타</a>
+      <a href="#bokkeum">볶음 요리 마무리</a>
+    </div>
+  </div>
+
+  <article class="recipe" id="bap-gim">
+    <p class="eyebrow">Recipe 01</p>
+    <h2>흰쌀밥 + 김</h2>
+    <p class="lead">한 스푼 비벼 김에 싸면 반찬이 필요 없는 한 끼.</p>
+    <div class="photo"><img src="../product-image/recipe-bapgim.jpg" alt="흰쌀밥에 들기름과 김"
+      onerror="this.parentNode.classList.add('ph'); this.parentNode.textContent='여기에 흰쌀밥+들기름+김 사진을 넣으세요';"></div>
+    <div class="rbody">
+      <div>
+        <h3>재료 (1인분)</h3>
+        <ul>
+          <li>따뜻한 흰쌀밥 1공기</li>
+          <li>고순 들기름 1큰술</li>
+          <li>구운 김 (조미 안 된 것) 5~6장</li>
+          <li>간장 몇 방울 · 통깨 (선택)</li>
+        </ul>
+      </div>
+      <div>
+        <h3>만드는 법</h3>
+        <ol>
+          <li>갓 지은 따뜻한 밥에 들기름 1큰술을 넣고 살살 비빕니다.</li>
+          <li>기호에 따라 간장 몇 방울과 통깨를 더합니다.</li>
+          <li>김에 한 입 크기로 싸서 바로 드세요.</li>
+        </ol>
+        <p class="tip"><b>포인트</b>밥이 뜨거울 때 비벼야 들기름 향이 가장 잘 올라옵니다.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="recipe" id="gangdwenjang">
+    <p class="eyebrow">Recipe 02</p>
+    <h2>강된장에 한 스푼</h2>
+    <p class="lead">다 된 강된장에 마지막으로 둘러 향을 확 살립니다.</p>
+    <div class="photo"><img src="../product-image/recipe-gangdwenjang.jpg" alt="강된장에 들기름 한 스푼"
+      onerror="this.parentNode.classList.add('ph'); this.parentNode.textContent='여기에 강된장 사진을 넣으세요';"></div>
+    <div class="rbody">
+      <div>
+        <h3>재료 (2인분)</h3>
+        <ul>
+          <li>된장 2큰술</li>
+          <li>다진 채소 (양파·애호박·표고 등) 한 줌</li>
+          <li>다진 마늘 1작은술</li>
+          <li>청양고추 1개</li>
+          <li>멸치·다시마 육수 1/2컵</li>
+          <li>고순 들기름 1작은술</li>
+        </ul>
+      </div>
+      <div>
+        <h3>만드는 법</h3>
+        <ol>
+          <li>팬에 육수를 붓고 된장을 풀어 끓입니다.</li>
+          <li>다진 채소와 마늘, 청양고추를 넣고 자작하게 졸입니다.</li>
+          <li>불을 끄고 들기름 1작은술을 둘러 섞습니다.</li>
+          <li>쌈 채소나 밥과 곁들여 드세요.</li>
+        </ol>
+        <p class="tip"><b>포인트</b>들기름은 반드시 마지막에. 끓이는 중에 넣으면 향이 날아갑니다.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="recipe" id="naeng-pasta">
+    <p class="eyebrow">Recipe 03</p>
+    <h2>냉파스타</h2>
+    <p class="lead">삶아 헹군 면에 들기름·간장을 둘러 고소하고 향긋하게.</p>
+    <div class="photo"><img src="../product-image/recipe-naengpasta.jpg" alt="들기름 냉파스타"
+      onerror="this.parentNode.classList.add('ph'); this.parentNode.textContent='여기에 냉파스타 사진을 넣으세요';"></div>
+    <div class="rbody">
+      <div>
+        <h3>재료 (1인분)</h3>
+        <ul>
+          <li>스파게티 80~100g</li>
+          <li>고순 들기름 1.5큰술</li>
+          <li>간장 1큰술</li>
+          <li>다진 마늘 1/2작은술</li>
+          <li>쪽파 · 통깨 · 김가루 (선택)</li>
+          <li>얼음물</li>
+        </ul>
+      </div>
+      <div>
+        <h3>만드는 법</h3>
+        <ol>
+          <li>면을 봉지 표기 시간보다 1분 더 삶습니다.</li>
+          <li>찬물에 헹군 뒤 얼음물에 잠깐 담갔다 건져 물기를 뺍니다.</li>
+          <li>볼에 들기름·간장·마늘을 섞어 소스를 만듭니다.</li>
+          <li>면에 소스를 버무리고 쪽파·통깨·김가루를 올립니다.</li>
+        </ol>
+        <p class="tip"><b>포인트</b>면을 완전히 차갑게 식혀야 들기름이 코팅되며 고소함이 또렷해집니다.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="recipe" id="bokkeum">
+    <p class="eyebrow">Recipe 04</p>
+    <h2>볶음 요리 마무리</h2>
+    <p class="lead">불을 끈 뒤 살짝 둘러 향을 입힙니다.</p>
+    <div class="photo"><img src="../product-image/recipe-bokkeum.jpg" alt="볶음 요리 마무리에 들기름"
+      onerror="this.parentNode.classList.add('ph'); this.parentNode.textContent='여기에 볶음 요리 사진을 넣으세요';"></div>
+    <div class="rbody">
+      <div>
+        <h3>재료</h3>
+        <ul>
+          <li>좋아하는 볶음 요리 (나물볶음·버섯볶음·잡채 등)</li>
+          <li>고순 들기름 1작은술</li>
+        </ul>
+      </div>
+      <div>
+        <h3>만드는 법</h3>
+        <ol>
+          <li>평소대로 볶음 요리를 완성합니다.</li>
+          <li>불을 완전히 끕니다.</li>
+          <li>들기름 1작은술을 두르고 가볍게 섞어 마무리합니다.</li>
+        </ol>
+        <p class="tip"><b>포인트</b>들기름은 발연점이 낮아 가열하면 향이 손상됩니다. 반드시 불을 끈 뒤 넣으세요.</p>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div class="end">
+  <p>세상에서 가장 신선한 들기름</p>
+  <a class="btn" href="들기름.html">들기름 보러가기</a>
+</div>
+
+<footer>
+  <div class="fwrap">
+    <div class="mark">gosoon</div>
+    세상에서 가장 신선한 들기름
+    <div class="legal">
+      고순 (GOSOON) · 대표자 입력 예정 · 사업자등록번호 입력 예정<br>
+      © 2026 GOSOON. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
