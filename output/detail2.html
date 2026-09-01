@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>고순 아향긋해 들기름 180ml — 상세페이지</title>
+<style>
+  @font-face { font-family:'Mendl Sans Dawn'; src:url('../brand-font/Mendl_Sans_Dawn_Light.otf'); font-weight:300; font-display:swap; }
+  @font-face { font-family:'Mendl Sans Dawn'; src:url('../brand-font/Mendl_Sans_Dawn_Regular.otf'); font-weight:400; font-display:swap; }
+  @font-face { font-family:'Mendl Sans Dawn'; src:url('../brand-font/Mendl_Sans_Dawn_Medium.otf'); font-weight:500; font-display:swap; }
+  @font-face { font-family:'EBS훈민정음새론'; src:url('../brand-font/EBS훈민정음새론L.ttf'); font-weight:300; font-display:swap; }
+  @font-face { font-family:'EBS훈민정음새론'; src:url('../brand-font/EBS훈민정음새론R.ttf'); font-weight:400; font-display:swap; }
+  @font-face { font-family:'EBS훈민정음새론'; src:url('../brand-font/EBS훈민정음새론SB.ttf'); font-weight:700; font-display:swap; }
+
+  :root{
+    --olive:#e4dfac; --lime:#d9e657; --sage:#cad3cf; --ink:#2b2622; --cream:#fefcf6;
+    --paper:#f4f0e4; --line:#e5e0d2; --coral:#ea4c36;
+    --kr:'EBS훈민정음새론','Mendl Sans Dawn',sans-serif;
+    --latin:'Mendl Sans Dawn','EBS훈민정음새론',sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:#e9e7e1; font-family:var(--kr); color:var(--ink); font-size:16px; line-height:1.75; -webkit-font-smoothing:antialiased;}
+  img{max-width:100%; display:block;}
+  .page{max-width:500px; margin:0 auto; background:var(--cream);}
+  .eyebrow{font-family:var(--kr); font-weight:700; letter-spacing:.2em; text-transform:uppercase; font-size:11px; color:#8a8172; margin:0 0 12px;}
+  h2{font-size:24px; font-weight:700; margin:0 0 16px; line-height:1.3; text-wrap:balance;}
+  p{margin:0 0 14px;}
+  .need{background:#fff5ec; border:1px solid #f6d8c6; color:#b5502f; font-size:12px; border-radius:8px; padding:10px 12px; margin:0 0 16px; letter-spacing:0;}
+  .ph{background:var(--paper); border:1px dashed #c9c2ad; border-radius:10px; display:flex; align-items:center; justify-content:center; text-align:center; color:#9a9078; font-size:13px; padding:24px;}
+
+  /* announce */
+  .announce{background:var(--ink); color:var(--cream); text-align:center; font-size:11px; letter-spacing:.06em; padding:9px 14px;}
+  .announce b{color:var(--lime);}
+
+  /* header */
+  .top{display:flex; align-items:center; justify-content:space-between; padding:14px 22px; border-bottom:1px solid var(--line);}
+  .top img{height:22px;}
+  .top .m{font-size:20px;}
+
+  /* gallery */
+  .gallery{display:flex; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none;}
+  .gallery::-webkit-scrollbar{display:none;}
+  .gallery .slide{flex:0 0 100%; scroll-snap-align:center; aspect-ratio:1/1; background:var(--olive); display:flex; align-items:center; justify-content:center; padding:34px;}
+  .gallery .slide img{max-height:100%; width:auto; filter:drop-shadow(0 18px 30px rgba(43,38,34,.18));}
+  .dots{display:flex; gap:6px; justify-content:center; padding:14px 0 0;}
+  .dots i{width:6px; height:6px; border-radius:50%; background:#cfc7b6;}
+  .dots i:first-child{background:var(--ink);}
+
+  /* buy block */
+  .buy{padding:22px 22px 28px; border-bottom:8px solid var(--paper);}
+  .buy h1{font-size:22px; font-weight:700; margin:6px 0 8px; line-height:1.35;}
+  .buy .rate{font-size:13px; color:#8a8172; margin:0 0 12px;}
+  .buy .rate b{color:var(--coral); letter-spacing:.12em;}
+  .buy .desc{font-size:14px; color:#4c453c; margin:0 0 20px;}
+
+  .field{margin:0 0 14px;}
+  .field label{display:block; font-size:12px; font-weight:700; letter-spacing:.06em; color:#8a8172; margin:0 0 6px;}
+  .field select{width:100%; font-family:var(--kr); font-size:14px; padding:12px 14px; border:1px solid var(--line); border-radius:10px; background:var(--cream); color:var(--ink);}
+  .subs{border:1px solid var(--line); border-radius:12px; overflow:hidden; margin:0 0 16px;}
+  .subs label{display:flex; align-items:center; gap:10px; padding:13px 14px; font-size:14px; cursor:pointer; border-bottom:1px solid var(--line);}
+  .subs label:last-child{border-bottom:none;}
+  .subs label span.tag{margin-left:auto; font-size:11px; font-weight:700; color:var(--ink); background:var(--lime); border-radius:999px; padding:3px 9px;}
+
+  .qty{display:flex; align-items:center; gap:14px; margin:0 0 18px;}
+  .qty button{width:36px; height:36px; border:1px solid var(--ink); background:var(--cream); border-radius:8px; font-size:18px; cursor:pointer; color:var(--ink);}
+  .qty span{font-size:16px; min-width:20px; text-align:center;}
+  .price{display:flex; align-items:baseline; gap:8px; margin:0 0 16px;}
+  .price b{font-size:26px; font-weight:700;}
+  .price s{color:#b0a894; font-size:15px;}
+
+  .cart{display:block; width:100%; text-align:center; background:var(--ink); color:var(--cream); font-weight:700; font-size:15px; letter-spacing:.04em; padding:16px; border-radius:12px;}
+  .cart.alt{background:var(--lime); color:var(--ink); margin-top:10px;}
+
+  /* tabs */
+  .tabs{display:flex; border-bottom:1px solid var(--line);}
+  .tabs button{flex:1; font-family:var(--kr); font-weight:700; font-size:13px; background:transparent; border:none; padding:15px 0; color:#8a8172; cursor:pointer; border-bottom:2px solid transparent;}
+  .tabs button.on{color:var(--ink); border-bottom-color:var(--ink);}
+  .tabpane{display:none; padding:24px 22px;}
+  .tabpane.on{display:block;}
+  .tabpane table{width:100%; border-collapse:collapse; font-size:13px;}
+  .tabpane th,.tabpane td{text-align:left; vertical-align:top; padding:10px 0; border-bottom:1px solid var(--line);}
+  .tabpane th{width:36%; color:#8a8172; font-weight:400;}
+  .tabpane .todo{color:var(--coral);}
+
+  /* editorial */
+  .sec{padding:56px 22px;}
+  .sec.tight{padding:0;}
+  .lead{color:#4c453c; font-size:15px;}
+  .fullbleed{aspect-ratio:1/1; background:var(--ink); color:var(--cream); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:40px;}
+  .fullbleed .eyebrow{color:#9a9078;}
+  .fullbleed h2{color:var(--cream); font-size:26px; margin:0;}
+  .fullbleed img{position:absolute;}
+
+  .bignum{background:var(--lime); text-align:center; padding:56px 22px;}
+  .bignum .en{font-family:var(--latin); font-size:13px; letter-spacing:.06em; color:#5a5f1e; margin:0 0 10px;}
+  .bignum .n{font-size:64px; font-weight:700; line-height:1; margin:0 0 8px;}
+  .bignum p{margin:0; font-size:14px; color:#4c453c;}
+
+  .checks{background:var(--paper);}
+  .checks .box{aspect-ratio:4/3; border-radius:12px; overflow:hidden; margin:0 0 22px; background:var(--olive);}
+  .checks .box img{width:100%; height:100%; object-fit:cover;}
+  .checks .grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .checks .c{background:var(--cream); border:1px solid var(--line); border-radius:12px; padding:16px 14px;}
+  .checks .c b{display:block; font-size:16px; margin:0 0 2px;}
+  .checks .c span{font-size:12px; color:#8a8172;}
+  .checks .c::before{content:"✓"; display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background:var(--lime); font-size:12px; font-weight:700; margin:0 0 10px;}
+
+  /* comparison */
+  .cmp table{width:100%; border-collapse:collapse; font-size:13px; margin-top:8px;}
+  .cmp th,.cmp td{padding:12px 8px; border-bottom:1px solid var(--line); text-align:center;}
+  .cmp th{color:#8a8172; font-weight:700; font-size:12px;}
+  .cmp td:first-child,.cmp th:first-child{text-align:left; color:var(--ink);}
+  .cmp .us{background:#f7f8e8; font-weight:700;}
+
+  /* story */
+  .story{background:var(--paper);}
+  .story .box{aspect-ratio:1/1; border-radius:12px; overflow:hidden; margin:0 0 20px; background:var(--olive);}
+  .story .box img{width:100%; height:100%; object-fit:cover;}
+  .story .link{font-weight:700; font-size:12px; letter-spacing:.08em; border-bottom:2px solid var(--ink); padding-bottom:3px; text-transform:uppercase;}
+
+  /* ways */
+  .ways .w{border-top:1px solid var(--line); padding:18px 0;}
+  .ways .w:last-child{border-bottom:1px solid var(--line);}
+  .ways .w b{color:var(--coral); font-size:14px; display:block; margin-bottom:2px;}
+  .ways .w span{font-size:14px; color:#4c453c;}
+
+  /* footer */
+  footer{background:#211d1a; color:#a79f93; padding:44px 22px 34px; font-size:12px;}
+  footer .mark{font-family:var(--latin); color:var(--cream); font-size:22px; letter-spacing:.24em; margin-bottom:8px;}
+  footer .cols{display:flex; gap:36px; margin:22px 0; flex-wrap:wrap;}
+  footer h4{font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:10px; color:#cfc7ba; margin:0 0 8px;}
+  footer ul{list-style:none; margin:0; padding:0; line-height:2;}
+  footer .legal{border-top:1px solid #3a342f; padding-top:18px; line-height:1.9;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="announce">3만원 이상 <b>무료배송</b> · 첫 구매 <b>10% 할인</b></div>
+
+  <div class="top">
+    <a href="home2.html"><img src="../brand/logo/logo.png" alt="고순" onerror="this.outerHTML='&lt;span style=&quot;font-family:var(--latin);font-size:18px;letter-spacing:.24em&quot;&gt;gosoon&lt;/span&gt;'"></a>
+    <span class="m">≡</span>
+  </div>
+
+  <!-- 갤러리 -->
+  <div class="gallery">
+    <div class="slide"><img src="../product-image/아향긋해들기름제품사진.png" alt="고순 아향긋해 들기름 180ml" onerror="this.parentNode.innerHTML='&lt;div class=\'ph\' style=\'width:100%;height:100%\'&gt;여기에 제품 단독 컷을 넣으세요&lt;/div&gt;'"></div>
+    <div class="slide"><img src="../product-image/들기름빙수.png" alt="들기름 활용" onerror="this.parentNode.innerHTML='&lt;div class=\'ph\' style=\'width:100%;height:100%\'&gt;여기에 활용 사진을 넣으세요&lt;/div&gt;'"></div>
+  </div>
+  <div class="dots"><i></i><i></i></div>
+
+  <!-- 구매 영역 -->
+  <div class="buy">
+    <p class="eyebrow">Gosoon · Perilla Oil 180ml</p>
+    <h1>아향긋해 들기름 180ml</h1>
+    <p class="rate"><b>★★★★★</b> &nbsp;4.9 · 후기 <u>00</u>개</p>
+    <p class="desc">그저 고소하기만 한 들기름이 아니라, 올리브오일처럼 향긋하게 즐기는 들기름. 고순이 주문에 맞춰 갓 짜서 보내드립니다.</p>
+
+    <p class="need">아래 판매가·후기 수·정기배송 조건은 예시입니다. 실제 값으로 수정하세요.</p>
+
+    <div class="field">
+      <label>용량 선택</label>
+      <select>
+        <option>180ml 1병</option>
+        <option>180ml 2병 세트 (5% 할인)</option>
+        <option>180ml 3병 세트 (10% 할인)</option>
+      </select>
+    </div>
+
+    <div class="subs">
+      <label><input type="radio" name="sub" checked> 한 번만 구매</label>
+      <label><input type="radio" name="sub"> 정기배송 · 1개월마다 <span class="tag">10% 할인</span></label>
+      <label><input type="radio" name="sub"> 정기배송 · 2개월마다 <span class="tag">7% 할인</span></label>
+    </div>
+
+    <div class="qty">
+      <button type="button" data-d="-1">−</button>
+      <span id="q">1</span>
+      <button type="button" data-d="1">+</button>
+    </div>
+
+    <div class="price"><b id="price">19,000원</b><s>21,000원</s></div>
+
+    <a class="cart" href="들기름.html">장바구니 담기</a>
+    <a class="cart alt" href="들기름.html">바로 구매하기</a>
+  </div>
+
+  <!-- 탭 -->
+  <div class="tabs">
+    <button class="on" data-t="0">제품 정보</button>
+    <button data-t="1">영양·표시사항</button>
+  </div>
+  <div class="tabpane on">
+    <table>
+      <tr><th>제품명</th><td>아향긋해 들기름</td></tr>
+      <tr><th>식품유형</th><td>식용유지 (들기름)</td></tr>
+      <tr><th>내용량</th><td>180ml</td></tr>
+      <tr><th>원재료명</th><td class="todo">들깨 함량·원산지 [입력]</td></tr>
+      <tr><th>보관방법</th><td class="todo">[직사광선 피해 실온 / 개봉 후 냉장 — 입력]</td></tr>
+      <tr><th>제조·판매원</th><td class="todo">고순 [상호·주소·연락처 입력]</td></tr>
+    </table>
+  </div>
+  <div class="tabpane">
+    <table>
+      <tr><th>1회 제공량</th><td class="todo">[입력] (예: 5g / 1작은술)</td></tr>
+      <tr><th>열량</th><td class="todo">[입력] kcal</td></tr>
+      <tr><th>불포화지방 (오메가3)</th><td class="todo">[입력] g</td></tr>
+      <tr><th>유통기한</th><td class="todo">제조일로부터 [개월]</td></tr>
+    </table>
+  </div>
+
+  <!-- 에디토리얼: 인트로 -->
+  <div class="sec">
+    <p class="eyebrow">Real Ingredients</p>
+    <h2>고소함,<br>그 이상의 향</h2>
+    <p class="lead">기존에 알던 들기름은 “고소하다”에서 끝났습니다. 고순은 올리브오일처럼 향긋한 들기름을 목표로, 잘 여문 들깨만 골라 갓 짜냅니다. 향은 진하게, 뒷맛은 깔끔하게.</p>
+  </div>
+
+  <!-- 풀블리드 -->
+  <div class="fullbleed">
+    <p class="eyebrow">One Ingredient</p>
+    <h2>국산 들깨,<br>그대로</h2>
+    <p style="color:#cfc7ba; font-size:13px; margin:14px 0 0;">여기에 들깨 클로즈업 사진을 배경으로 넣으세요</p>
+  </div>
+
+  <!-- 두 가지 특징 -->
+  <div class="sec">
+    <p class="eyebrow">One Blend</p>
+    <h2>깊은 향과 깔끔한 뒷맛,<br>하나의 기름에</h2>
+    <p class="lead">향만 진하면 물리고, 뒷맛만 깔끔하면 밋밋합니다. 고순은 볶음 온도와 압착 방식을 조절해 두 가지를 한 병에 담았습니다.</p>
+    <p class="need">볶음 온도·압착 방식(저온압착/생압착 등)은 실제 값으로 채워 주세요.</p>
+  </div>
+
+  <!-- 큰 숫자 -->
+  <div class="bignum">
+    <p class="en">Perilla oil isn't just about aroma.</p>
+    <p class="n">오메가3</p>
+    <p>들기름은 오메가3가 풍부한 한국의 전통 K-OIL입니다. <span class="todo">(1회 제공량당 함량 [입력])</span></p>
+  </div>
+
+  <!-- 체크 4개 -->
+  <div class="sec checks">
+    <p class="eyebrow" style="text-align:center;">Why Gosoon</p>
+    <h2 style="text-align:center;">밥 한 공기로<br>완벽한 한 끼</h2>
+    <div class="box"><img src="../product-image/들기름빙수.png" alt="밥과 들기름" onerror="this.parentNode.classList.add('ph');this.parentNode.textContent='여기에 밥+들기름+김 사진을 넣으세요'"></div>
+    <div class="grid">
+      <div class="c"><b>깊은 향</b><span>올리브오일처럼 향긋하게</span></div>
+      <div class="c"><b>깔끔한 뒷맛</b><span>계속 손이 가는 마무리</span></div>
+      <div class="c"><b>갓 짠 신선함</b><span>주문에 맞춰 압착·발송</span></div>
+      <div class="c"><b>전통 K-OIL</b><span>오메가3 풍부한 우리 기름</span></div>
+    </div>
+  </div>
+
+  <!-- 비교표 -->
+  <div class="sec cmp">
+    <p class="eyebrow">Compare</p>
+    <h2>모든 들기름이<br>똑같지는 않습니다</h2>
+    <table>
+      <tr><th></th><th class="us">고순</th><th>일반 들기름</th></tr>
+      <tr><td>압착 시점</td><td class="us">주문 후 소량 압착</td><td>대량 압착 후 장기 보관</td></tr>
+      <tr><td>향</td><td class="us">향긋함 + 고소함</td><td>고소함 위주</td></tr>
+      <tr><td>뒷맛</td><td class="us">깔끔</td><td>텁텁할 수 있음</td></tr>
+      <tr><td>활용</td><td class="us">밥·국수·볶음 마무리</td><td>주로 나물 무침</td></tr>
+    </table>
+    <p class="need">비교 항목은 사실 확인 후 조정하세요.</p>
+  </div>
+
+  <!-- 스토리 -->
+  <div class="sec story">
+    <div class="box ph">여기에 들기름 짜는 / 대표 사진을 넣으세요</div>
+    <p class="eyebrow">Our Story</p>
+    <h2>한국에서<br>신선한 들기름을 짜는 고순</h2>
+    <p class="lead">올리브오일처럼 향긋한 들기름을 맛본 그날의 경험을 계기로, 어디에든 넣어 먹고 싶은 들기름을 짜기 시작했습니다.</p>
+    <a class="link" href="히스토리.html">고순 히스토리 →</a>
+  </div>
+
+  <!-- 즐기는 방법 -->
+  <div class="sec ways">
+    <p class="eyebrow">How to enjoy</p>
+    <h2>들기름을 즐기는<br>세 가지 방법</h2>
+    <div class="w"><b>밥에 비벼서</b><span>따뜻한 흰쌀밥에 한 스푼, 김에 싸서 끝</span></div>
+    <div class="w"><b>국수·파스타에</b><span>삶아 헹군 면에 들기름·간장 한 바퀴</span></div>
+    <div class="w"><b>볶음 마무리에</b><span>불을 끈 뒤 살짝 둘러 향을 입히기</span></div>
+  </div>
+
+  <!-- 푸터 -->
+  <footer>
+    <div class="mark">gosoon</div>
+    세상에서 가장 신선한 들기름
+    <div class="cols">
+      <div><h4>Shop</h4><ul><li><a href="들기름.html">아향긋해 들기름</a></li><li><a href="레시피.html">레시피</a></li></ul></div>
+      <div><h4>Learn</h4><ul><li><a href="히스토리.html">브랜드 이야기</a></li><li><a href="들기름.html#faq">자주 묻는 질문</a></li></ul></div>
+      <div><h4>Connect</h4><ul><li>인스타그램 · 입력 예정</li><li>이메일 · 입력 예정</li></ul></div>
+    </div>
+    <div class="legal">
+      고순 (GOSOON) · 대표자 입력 예정 · 사업자등록번호 입력 예정<br>
+      교환/반품: 식품 특성상 단순 변심 불가 · 파손·오배송은 수령 후 7일 이내<br>
+      © 2026 GOSOON. All rights reserved.
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  var unit = 19000, q = 1;
+  var qEl = document.getElementById('q'), pEl = document.getElementById('price');
+  document.querySelectorAll('.qty button').forEach(function(b){
+    b.addEventListener('click', function(){
+      q = Math.max(1, q + (+b.dataset.d));
+      qEl.textContent = q;
+      pEl.textContent = (unit * q).toLocaleString('ko-KR') + '원';
+    });
+  });
+  document.querySelectorAll('.tabs button').forEach(function(b){
+    b.addEventListener('click', function(){
+      var i = +b.dataset.t;
+      document.querySelectorAll('.tabs button').forEach(function(x,xi){ x.classList.toggle('on', xi===i); });
+      document.querySelectorAll('.tabpane').forEach(function(x,xi){ x.classList.toggle('on', xi===i); });
+    });
+  });
+  var g = document.querySelector('.gallery'), dots = document.querySelectorAll('.dots i');
+  g.addEventListener('scroll', function(){
+    var i = Math.round(g.scrollLeft / g.clientWidth);
+    dots.forEach(function(d,di){ d.style.background = di===i ? '#2b2622' : '#cfc7b6'; });
+  });
+</script>
+
+</body>
+</html>
