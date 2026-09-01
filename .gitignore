@@ -4,3 +4,6 @@ node_modules/
 .DS_Store
 .cache/
 *.log
+
+# 참고용 대용량 스크린샷 (Pages에 올리지 않음)
+brand/logo/www.sotbatlab.com*
