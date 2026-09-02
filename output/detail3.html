@@ -94,15 +94,16 @@
   .block p:last-child{margin-bottom:0;}
   .kicker{font-size:12px; color:var(--cap); letter-spacing:.02em; margin:0 0 10px;}
   h2.h{font-size:19px; font-weight:600; line-height:1.5; margin:0 0 16px; letter-spacing:-.02em;}
-  .statement{font-size:17px; font-weight:600; line-height:1.6; color:var(--tx); text-align:center; padding:40px 22px; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
   .lead{color:var(--tx2);}
 
-  .badges{display:flex; flex-wrap:wrap; gap:7px; justify-content:center; padding:24px 22px 4px;}
-  .badges span{border:1px solid var(--line2); color:var(--tx2); font-size:12px; padding:6px 12px;}
+  .declare{background:#1b1b1b; color:#fff; text-align:center; padding:52px 24px;}
+  .declare .d1{font-size:23px; font-weight:700; line-height:1.5; letter-spacing:-.02em; margin:0 0 24px;}
+  .declare .d2{display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:0; padding:0; list-style:none;}
+  .declare .d2 li{font-size:13.5px; font-weight:600; color:#111; background:#fff; padding:8px 15px; border-radius:2px;}
 
-  .series{text-align:center; padding:36px 22px; background:var(--sub); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .series{text-align:center; padding:32px 22px; background:var(--sub); border-bottom:1px solid var(--line);}
   .series .s1{font-size:12px; color:var(--cap); margin:0 0 6px;}
-  .series .s2{font-size:18px; font-weight:700; margin:0;}
+  .series .s2{font-size:19px; font-weight:700; margin:0;}
 
   .facts{counter-reset:f; padding:6px 22px 10px;}
   .facts li{counter-increment:f; list-style:none; padding:18px 0 18px 30px; border-bottom:1px solid var(--line); position:relative; font-size:14px; color:var(--tx2); line-height:1.75;}
@@ -264,12 +265,13 @@
         <p>고순 들기름은 중국산을 사용하지 않습니다. 국내 들깨 농부님들이 정성껏 수확한 국산 들깨를, 직접 눈으로 확인하고 구매해 사용합니다.</p>
       </div>
 
-      <div class="statement">당연한 이야기는 하지 않겠습니다.</div>
-
-      <div class="badges">
-        <span>단 한 번의 착유</span>
-        <span>벤조피렌 걱정 없음</span>
-        <span>들깨 100%</span>
+      <div class="declare">
+        <p class="d1">당연한 이야기는<br>하지 않겠습니다.</p>
+        <ul class="d2">
+          <li>단 한 번의 착유</li>
+          <li>벤조피렌 걱정 없음</li>
+          <li>들깨 100%</li>
+        </ul>
       </div>
 
       <div class="series">
