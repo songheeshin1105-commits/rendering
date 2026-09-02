@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[고순] 아, 향긋해 들기름 180ml — 상세페이지</title>
+<style>
+  @font-face{ font-family:'Pretendard'; src:url('../brand-font/PretendardVariable.ttf') format('truetype-variations'); font-weight:100 900; font-display:swap; }
+
+  :root{
+    --bg:#ffffff; --sub:#fafafa; --tx:#222222; --tx2:#666666; --cap:#999999;
+    --line:#ededed; --line2:#e2e2e2; --dark:#222222; --sale:#e4483b;
+    --f:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;}
+  body{background:#e9e9e9; color:var(--tx); font-family:var(--f); font-size:15px; line-height:1.72; -webkit-font-smoothing:antialiased; letter-spacing:-.01em;}
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  .page{max-width:500px; margin:0 auto; background:var(--bg);}
+
+  /* figure — 캡션 달린 도판 */
+  figure{margin:0;}
+  .fig{background:#f6f6f6; border:1px solid var(--line); aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; text-align:center; color:var(--cap); font-size:12.5px; padding:24px; line-height:1.6;}
+  .fig.wide{aspect-ratio:4/3;}
+  .fig.tall{aspect-ratio:3/4;}
+  figcaption{color:var(--cap); font-size:12px; margin-top:8px; text-align:center;}
+  .fig img{width:100%; height:100%; object-fit:cover;}
+
+  /* 상단 바 */
+  .bar{display:flex; align-items:center; justify-content:space-between; height:52px; padding:0 18px; border-bottom:1px solid var(--line);}
+  .bar img{height:19px;}
+  .bar .mk{font-size:20px; color:var(--tx2);}
+  .crumb{font-size:12px; color:var(--cap); padding:11px 18px; border-bottom:1px solid var(--line);}
+
+  /* 갤러리 */
+  .gallery{display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; -webkit-overflow-scrolling:touch;}
+  .gallery::-webkit-scrollbar{display:none;}
+  .gallery .s{flex:0 0 100%; scroll-snap-align:center; aspect-ratio:1/1; background:#f4f4f4; display:flex; align-items:center; justify-content:center; padding:30px;}
+  .gallery .s img{max-height:100%; width:auto;}
+  .dots{display:flex; gap:5px; justify-content:center; padding:12px 0;}
+  .dots i{width:6px; height:6px; border-radius:50%; background:#d5d5d5;}
+
+  /* 구매 영역 */
+  .buy{padding:20px 18px 24px; border-bottom:10px solid var(--sub);}
+  .buy .brand{font-size:12px; color:var(--tx2); margin:0 0 5px;}
+  .buy h1{font-size:19px; font-weight:600; line-height:1.4; margin:0 0 14px;}
+  .buy .price{display:flex; align-items:baseline; gap:7px; margin:0 0 4px;}
+  .buy .price .off{color:var(--sale); font-size:19px; font-weight:700;}
+  .buy .price .now{font-size:22px; font-weight:700;}
+  .buy .price .won{font-size:15px; font-weight:600;}
+  .buy .price s{color:var(--cap); font-size:13px; margin-left:2px;}
+  .buy .member{font-size:11.5px; color:var(--cap); margin:0 0 16px;}
+
+  .info{border-top:1px solid var(--line); margin:0 0 18px;}
+  .info div{display:flex; gap:12px; padding:10px 0; border-bottom:1px solid var(--line); font-size:12.5px; line-height:1.55;}
+  .info dt{flex:0 0 76px; color:var(--cap);}
+  .info dd{margin:0; color:var(--tx2);}
+  .todo{color:var(--sale);}
+
+  .qtyrow{display:flex; align-items:center; justify-content:space-between; background:var(--sub); border:1px solid var(--line); padding:12px 14px; margin:0 0 12px;}
+  .qtyrow .nm{font-size:13px;}
+  .stepper{display:flex; align-items:center; border:1px solid var(--line2); background:#fff;}
+  .stepper button{width:30px; height:30px; border:none; background:#fff; font-size:15px; color:var(--tx2); cursor:pointer;}
+  .stepper span{width:34px; text-align:center; font-size:13px; border-left:1px solid var(--line2); border-right:1px solid var(--line2); line-height:30px;}
+  .total{display:flex; align-items:baseline; justify-content:space-between; padding:6px 2px 16px;}
+  .total .t1{font-size:13px; color:var(--tx2);}
+  .total .t2{font-size:13px; color:var(--cap);}
+  .total .t2 b{font-size:22px; font-weight:700; color:var(--tx); margin-right:3px;}
+
+  .cta{display:flex; gap:8px;}
+  .cta a{flex:1; text-align:center; padding:14px 0; font-size:14px; font-weight:600; border:1px solid var(--dark);}
+  .cta .line{background:#fff; color:var(--dark);}
+  .cta .fill{background:var(--dark); color:#fff;}
+
+  /* 이벤트 / 콜아웃 */
+  .event{padding:14px 18px; font-size:12.5px; color:var(--tx2); border-bottom:1px solid var(--line); background:#fff;}
+  .event b{color:var(--tx); font-weight:600;}
+  .notice{padding:16px 18px; font-size:12.5px; line-height:1.7; color:var(--tx2); background:var(--sub); border-bottom:1px solid var(--line);}
+  .notice b{display:block; color:var(--tx); font-weight:600; margin-bottom:3px;}
+
+  /* 탭 */
+  .tabs{display:flex; position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid var(--line2);}
+  .tabs button{flex:1; border:none; background:#fff; font-family:var(--f); font-size:13px; font-weight:600; color:var(--cap); padding:14px 0; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-1px;}
+  .tabs button.on{color:var(--tx); border-bottom-color:var(--dark);}
+  .pane{display:none;}
+  .pane.on{display:block;}
+
+  /* 본문 */
+  .body{padding:8px 0 0;}
+  .block{padding:34px 22px;}
+  .block.center{text-align:center;}
+  .block p{margin:0 0 15px;}
+  .block p:last-child{margin-bottom:0;}
+  .kicker{font-size:12px; color:var(--cap); letter-spacing:.02em; margin:0 0 10px;}
+  h2.h{font-size:19px; font-weight:600; line-height:1.5; margin:0 0 16px; letter-spacing:-.02em;}
+  .statement{font-size:17px; font-weight:600; line-height:1.6; color:var(--tx); text-align:center; padding:40px 22px; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .lead{color:var(--tx2);}
+
+  .badges{display:flex; flex-wrap:wrap; gap:7px; justify-content:center; padding:24px 22px 4px;}
+  .badges span{border:1px solid var(--line2); color:var(--tx2); font-size:12px; padding:6px 12px;}
+
+  .series{text-align:center; padding:36px 22px; background:var(--sub); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .series .s1{font-size:12px; color:var(--cap); margin:0 0 6px;}
+  .series .s2{font-size:18px; font-weight:700; margin:0;}
+
+  .facts{counter-reset:f; padding:6px 22px 10px;}
+  .facts li{counter-increment:f; list-style:none; padding:18px 0 18px 30px; border-bottom:1px solid var(--line); position:relative; font-size:14px; color:var(--tx2); line-height:1.75;}
+  .facts li:last-child{border-bottom:none;}
+  .facts li::before{content:counter(f); position:absolute; left:0; top:18px; font-size:13px; font-weight:700; color:var(--tx);}
+
+  /* 체크 포인트 */
+  .check{padding:34px 22px; background:var(--sub); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .check h2.h{text-align:center;}
+  .check .row{display:flex; padding:16px 0; border-bottom:1px solid var(--line);}
+  .check .row:last-child{border-bottom:none;}
+  .check .row .l{flex:0 0 96px; font-size:13px; font-weight:600;}
+  .check .row .r{font-size:13px; color:var(--tx2); line-height:1.7;}
+
+  /* 특장점 */
+  .points{padding:6px 22px 10px;}
+  .points .pt{padding:22px 0; border-bottom:1px solid var(--line);}
+  .points .pt:last-child{border-bottom:none;}
+  .points .pt .n{font-size:12px; color:var(--cap); margin:0 0 4px;}
+  .points .pt h3{font-size:15px; font-weight:600; margin:0 0 8px;}
+  .points .pt p{font-size:13.5px; color:var(--tx2); line-height:1.78; margin:0;}
+
+  .figs{padding:8px 22px;}
+  .figs figure{margin:0 0 22px;}
+  .figs figure:last-child{margin-bottom:0;}
+
+  /* 병 크기 비교 */
+  .size{padding:38px 22px; border-top:1px solid var(--line);}
+  .size h2.h{text-align:center;}
+  .size .stage{display:flex; align-items:flex-end; justify-content:center; gap:34px; padding:16px 0 6px;}
+  .size .bottle{width:52px;}
+  .size .bottle .neck{width:16px; height:26px; background:#d9d9d9; margin:0 auto;}
+  .size .bottle .body{height:150px; background:#c9c9c9; display:flex; align-items:center; justify-content:center; font-size:10px; color:#fff; text-align:center;}
+  .size .can{width:70px;}
+  .size .can .body{height:120px; background:#e4e4e4; border:1px solid #d2d2d2; display:flex; align-items:center; justify-content:center; font-size:10px; color:var(--cap); text-align:center;}
+  .size .dim{font-size:11px; color:var(--cap); text-align:center; margin-top:6px;}
+  .size .note{font-size:12px; color:var(--cap); text-align:center; margin:10px 0 0;}
+
+  /* 상품고시정보 */
+  .gosi{padding:34px 22px;}
+  .gosi table{width:100%; border-collapse:collapse; font-size:12px;}
+  .gosi th,.gosi td{text-align:left; vertical-align:top; padding:10px 8px; border-bottom:1px solid var(--line); line-height:1.6;}
+  .gosi th{width:38%; color:var(--cap); font-weight:400; background:var(--sub);}
+
+  /* WHY 고순 */
+  .why{padding:38px 22px; background:var(--sub); border-top:1px solid var(--line);}
+  .why h2.h{text-align:center;}
+  .why .w{padding:16px 0; border-bottom:1px solid var(--line); text-align:center;}
+  .why .w:last-child{border-bottom:none;}
+  .why .w b{display:block; font-size:14px; margin-bottom:3px;}
+  .why .w span{font-size:12.5px; color:var(--tx2);}
+
+  /* 고객센터 / 배송 */
+  .cs{padding:30px 22px; font-size:12.5px; color:var(--tx2); line-height:1.8; border-top:1px solid var(--line);}
+  .cs b{color:var(--tx); font-weight:600;}
+
+  /* 푸터 */
+  footer{background:#f4f4f4; color:var(--cap); padding:28px 22px 34px; font-size:11.5px; line-height:1.85; border-top:1px solid var(--line);}
+  footer .mk{font-size:15px; color:var(--tx2); letter-spacing:.18em; margin-bottom:8px;}
+  footer a{color:var(--tx2);}
+  footer .lk{margin:8px 0 14px;}
+  footer .lk a{margin-right:14px;}
+
+  @media (max-width:380px){ .size .stage{gap:20px;} }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="bar">
+    <a href="home2.html"><img src="../brand/logo/logo.png" alt="고순" onerror="this.outerHTML='&lt;span style=&quot;font-size:15px;letter-spacing:.2em;color:#666&quot;&gt;gosoon&lt;/span&gt;'"></a>
+    <span class="mk">≡</span>
+  </div>
+  <div class="crumb">홈 &nbsp;›&nbsp; 국산 들기름 &nbsp;›&nbsp; 아, 향긋해 들기름 180ml</div>
+
+  <!-- 갤러리 -->
+  <div class="gallery">
+    <div class="s"><img src="../product-image/아향긋해들기름제품사진.png" alt="고순 아, 향긋해 들기름 180ml" onerror="this.parentNode.innerHTML='&lt;div class=\'fig\' style=\'width:100%;height:100%;border:none\'&gt;[제품 메인컷]&lt;/div&gt;'"></div>
+    <div class="s"><img src="../product-image/들기름빙수.png" alt="들기름 활용컷" onerror="this.parentNode.innerHTML='&lt;div class=\'fig\' style=\'width:100%;height:100%;border:none\'&gt;[활용컷]&lt;/div&gt;'"></div>
+  </div>
+  <div class="dots"><i></i><i></i></div>
+
+  <!-- 구매 영역 -->
+  <div class="buy">
+    <p class="brand">고순</p>
+    <h1>[고순] 아, 향긋해 들기름 180ml (국산 들깨 100%)</h1>
+    <div class="price">
+      <span class="off">10%</span>
+      <span class="now">25,000</span><span class="won">원</span>
+      <s>28,000원</s>
+    </div>
+    <p class="member">후기 수·정기 할인율은 예시입니다. 실제 값으로 수정하세요.</p>
+
+    <dl class="info">
+      <div><dt>판매자</dt><dd>고순 <span class="todo">(상호·연락처 입력)</span></dd></div>
+      <div><dt>배송</dt><dd>예약 주문 후 일괄 착유 · <span class="todo">발송 주기 입력</span></dd></div>
+      <div><dt>포장타입</dt><dd>갈색 차광 유리병 / 에어캡 완충 포장</dd></div>
+      <div><dt>판매단위</dt><dd>1병</dd></div>
+      <div><dt>중량·용량</dt><dd>180ml</dd></div>
+      <div><dt>원산지</dt><dd>국산 들깨 100% <span class="todo">(세부 산지 표기)</span></dd></div>
+      <div><dt>소비기한</dt><dd class="todo">제조일로부터 [개월] — 입력</dd></div>
+    </dl>
+
+    <div class="qtyrow">
+      <span class="nm">아, 향긋해 들기름 180ml</span>
+      <div class="stepper">
+        <button type="button" data-d="-1">−</button><span id="q">1</span><button type="button" data-d="1">+</button>
+      </div>
+    </div>
+    <div class="total">
+      <span class="t1">총 상품금액</span>
+      <span class="t2"><b id="total">25,000</b>원</span>
+    </div>
+
+    <div class="cta">
+      <a class="line" href="들기름.html">장바구니 담기</a>
+      <a class="fill" href="들기름.html">바로구매</a>
+    </div>
+  </div>
+
+  <div class="event">[이벤트] 추석 선물세트 기념 <b>보자기 포장 무료</b></div>
+  <div class="notice">
+    <b>꼭 확인해주세요</b>
+    저희는 예약 주문을 받아 일괄 착유합니다. 가장 신선한 상태의 들기름을 보내드리기 위해서예요.
+  </div>
+
+  <!-- 탭 -->
+  <div class="tabs">
+    <button class="on" data-t="0">상품설명</button>
+    <button data-t="1">상세정보</button>
+    <button data-t="2">후기</button>
+    <button data-t="3">문의</button>
+  </div>
+
+  <!-- 상품설명 -->
+  <div class="pane on">
+    <div class="body">
+
+      <div class="figs" style="padding-top:22px;">
+        <figure>
+          <div class="fig"><img src="../product-image/아향긋해들기름제품사진.png" alt="제품 메인컷" onerror="this.parentNode.textContent='[제품 메인컷]'"></div>
+          <figcaption>아, 향긋해 들기름 180ml</figcaption>
+        </figure>
+      </div>
+
+      <div class="block">
+        <p>안녕하세요, 전국의 들깨를 찾아다니는 들깨연구가 고순입니다.</p>
+        <p class="lead">저희는 들기름을 ‘향유’하는 것을 목표로 합니다. 전국을 고르고, 깨를 고르고, 농부님들이 가져오시는 각양각색의 깨를 직접 볶아 착유합니다.</p>
+      </div>
+
+      <div class="figs">
+        <figure>
+          <div class="fig wide">[밭사진]</div>
+          <figcaption>국내 들깨밭</figcaption>
+        </figure>
+      </div>
+
+      <div class="block">
+        <p>고순 들기름은 중국산을 사용하지 않습니다. 국내 들깨 농부님들이 정성껏 수확한 국산 들깨를, 직접 눈으로 확인하고 구매해 사용합니다.</p>
+      </div>
+
+      <div class="statement">당연한 이야기는 하지 않겠습니다.</div>
+
+      <div class="badges">
+        <span>단 한 번의 착유</span>
+        <span>벤조피렌 걱정 없음</span>
+        <span>들깨 100%</span>
+      </div>
+
+      <div class="series">
+        <p class="s1">고순의 첫 번째 ‘들깨향 시리즈’</p>
+        <p class="s2">Series 01. 아, 향긋해 들기름</p>
+      </div>
+
+      <div class="block">
+        <p>여러분, 우리가 아는 들깨는 원래 고소하지 않아요. 들깨 본연의 맛은, 사실 ‘향긋함’이거든요.</p>
+        <p class="lead">들깨를 수확해 차에 싣고 트렁크 문을 딱 열면 향긋한 들깨향이 퍼집니다. 이 행복한 향을 더 많은 분들께 전하고 싶어서, 들깨의 진짜 향을 담은 첫 번째 시리즈를 만들었습니다. ‘아, 향긋해 들기름’.</p>
+        <p class="lead">많이 볶아 많이 나오는 기름이 아니라, 과학적으로 계산된 최적의 온도와 시간으로 들깨 고유의 향을 은은하게 끌어낸 기름입니다.</p>
+      </div>
+
+      <div class="figs">
+        <figure>
+          <div class="fig wide">[논문사진]</div>
+          <figcaption>들깨 관련 논문 50여 종 정독</figcaption>
+        </figure>
+      </div>
+
+      <div class="block" style="padding-bottom:8px;">
+        <h2 class="h">들깨 관련 논문 50여 종을 정독하며<br>확인한 3가지 사실입니다.</h2>
+      </div>
+      <ol class="facts">
+        <li>벤조피렌이 검출될 만큼 새까맣게 볶지 않는 이상, 볶은 들기름과 생들기름의 오메가3 함량은 유의미한 차이가 없습니다. 그래서 저희는 향과 맛을 해치지 않는 낮은 온도에서 천천히 볶아, 최상의 맛을 끌어내는 방식을 택했습니다. 저희는 들기름이 맛있어서 먹습니다. 적어도 고순의 들기름을 드셔본 분들은 ‘들기름이 이렇게 맛있었나’ 하는 경험을 하셨으면 합니다.</li>
+        <li>들기름을 고를 때 중요한 건 ‘생들기름이냐, 저온압착이냐’가 아니라 ‘언제 생산했느냐’입니다. 가장 좋은 들기름은, 가장 신선한 들기름입니다.</li>
+        <li>들기름은 지방산 사슬 구조가 복잡하게 얽힌 불포화지방산—오메가3를 약 60% 함유한 기름입니다. 이렇게 예민한 구조는 산패에 취약할 수밖에 없습니다. 그래서 빛을 차단하는 차광병을 꼭 선택하셔야 합니다.</li>
+      </ol>
+
+      <div class="check">
+        <h2 class="h">고순의 체크 포인트</h2>
+        <div class="row"><div class="l">재료와 성분</div><div class="r">국산 들깨 100%. 중국산 미사용, 직접 확인 후 매입.</div></div>
+        <div class="row"><div class="l">생산·유통</div><div class="r">예약 주문 후 일괄 착유. 10년 차 커피로스터의 저온 로스팅 기법.</div></div>
+        <div class="row"><div class="l">인증과 수상</div><div class="r">HACCP 인증 시설에서 생산. <span class="todo">인증번호·수상 이력 입력</span></div></div>
+      </div>
+
+      <div class="block" style="padding-bottom:6px;">
+        <h2 class="h">특장점</h2>
+      </div>
+      <div class="points">
+        <div class="pt">
+          <p class="n">01</p>
+          <h3>향긋한 향</h3>
+          <p>들깨연구가가 제안하는, 들깨 본연의 향을 즐겨보세요. 10년 차 커피로스터가 개발한 로스팅 기법으로, 여리여리하면서도 긴 여운의 향긋한 피니시를 담았습니다. 좋은 올리브오일을 가열하지 않고 스윽 둘러먹듯, 이 들기름도 어떤 음식에든 듬뿍 뿌려보세요. 매일의 식탁이 조금 더 풍요로운 시간이 될 거예요.</p>
+        </div>
+        <div class="pt">
+          <p class="n">02</p>
+          <h3>10년 차 커피로스터의 로스팅 기법</h3>
+          <p>놀랍게도 커피와 들깨는 닮은 점이 많습니다. 생두를 그대로 먹지 않고 로스팅해 풍미를 끌어내듯, 들깨도 마찬가지입니다. 들깨 향미를 최대로 살리는 낮은 온도에서 천천히 볶는 로스팅 기법으로, 시중에서 느껴보지 못한 들깨 본연의 향긋함을 담았습니다.</p>
+        </div>
+        <div class="pt">
+          <p class="n">03</p>
+          <h3>산패를 막는 차광병</h3>
+          <p>들기름에게 차광병은 선택이 아닌 필수입니다. 더 맛있게, 더 오래 즐기실 수 있도록 갈색 차광병을 사용했습니다.</p>
+        </div>
+        <div class="pt">
+          <p class="n">04</p>
+          <h3>흐르지 않는 병 구조</h3>
+          <p>기름 따를 때마다 흘러내려 닦아야 했던 불편함, 다들 한 번쯤 겪어보셨을 거예요. 들기름을 쓰는 시간이 불편함 없이 설레는 시간이길 바라며, 푸어러 형태의 마개를 적용했습니다. 부담 없이 마음껏 둘러주세요.</p>
+        </div>
+        <div class="pt">
+          <p class="n">05</p>
+          <h3>HACCP 인증 시설</h3>
+          <p>더 안전하고 깨끗하게, HACCP 인증을 받은 시설에서 신선한 기름을 생산합니다.</p>
+        </div>
+        <div class="pt">
+          <p class="n">06</p>
+          <h3>전국 팔도에서 고른 들깨</h3>
+          <p>경기 연천부터 강원도, 경기 안성, 충북 음성, 부여, 괴산, 경북까지. 전국의 들깨 농부님들을 찾아다니며 엄선한 들깨로, 그때그때 가장 좋은 상태의 들깨를 직접 착유해 보내드립니다.</p>
+        </div>
+      </div>
+
+      <div class="figs">
+        <figure>
+          <div class="fig wide">[에어캡 포장 사진]</div>
+          <figcaption>깨질 염려 없도록 에어캡으로 안전하게 포장해 보내드립니다.</figcaption>
+        </figure>
+        <figure>
+          <div class="fig wide">[유리병 소독]</div>
+          <figcaption>병입 전 유리병 소독</figcaption>
+        </figure>
+        <figure>
+          <div class="fig wide">[품질검사 인증표]</div>
+          <figcaption>품질검사 성적서</figcaption>
+        </figure>
+        <figure>
+          <div class="fig wide">[들기름 활용 레시피 사진]</div>
+          <figcaption>어떤 음식에든 가열 없이 스윽</figcaption>
+        </figure>
+      </div>
+
+      <div class="size">
+        <h2 class="h">크기 안내</h2>
+        <div class="stage">
+          <div class="bottle">
+            <div class="neck"></div>
+            <div class="body">아, 향긋해<br>들기름<br>180ml</div>
+            <div class="dim">6.5 × 15.5cm</div>
+          </div>
+          <div class="can">
+            <div class="body">500ml<br>캔</div>
+            <div class="dim">크기 비교용</div>
+          </div>
+        </div>
+        <p class="note">실제 색상과 크기는 모니터 환경에 따라 다를 수 있습니다.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 상세정보 -->
+  <div class="pane">
+    <div class="gosi">
+      <h2 class="h">상품고시정보</h2>
+      <table>
+        <tr><th>제품명</th><td>아, 향긋해 들기름</td></tr>
+        <tr><th>식품의 유형</th><td>식용유지가공품 / 들기름 <span class="todo">(표기 확인)</span></td></tr>
+        <tr><th>생산자·소재지</th><td class="todo">제조원 상호·주소 입력 (HACCP 인증시설)</td></tr>
+        <tr><th>제조연월일</th><td>착유일 별도 표기 (예약 주문 후 착유)</td></tr>
+        <tr><th>소비기한</th><td class="todo">제조일로부터 [개월] 입력</td></tr>
+        <tr><th>포장단위별 내용물의 용량</th><td>180ml, 1병</td></tr>
+        <tr><th>원재료명 및 함량</th><td>들깨 100% (국산) <span class="todo">세부 산지 표기</span></td></tr>
+        <tr><th>영양성분</th><td class="todo">1회 제공량·열량·지방·오메가3 등 입력</td></tr>
+        <tr><th>유전자변형식품 여부</th><td>해당 없음</td></tr>
+        <tr><th>소비자상담 관련 전화번호</th><td class="todo">고객센터 번호 입력</td></tr>
+        <tr><th>보관방법</th><td>직사광선을 피해 서늘한 곳 보관, 개봉 후 냉장 보관 후 가급적 빨리 사용</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 후기 -->
+  <div class="pane">
+    <div class="block">
+      <p class="lead">등록된 후기를 이곳에 표시합니다. 실제 구매 후기로 교체해 주세요.</p>
+    </div>
+  </div>
+
+  <!-- 문의 -->
+  <div class="pane">
+    <div class="block">
+      <p class="lead">상품 문의는 고객센터 또는 <span class="todo">인스타그램/이메일 입력</span> 으로 남겨주세요.</p>
+    </div>
+  </div>
+
+  <!-- WHY 고순 -->
+  <div class="why">
+    <h2 class="h">WHY 고순</h2>
+    <div class="w"><b>엄선한 국산 들깨</b><span>전국 팔도를 다니며 직접 확인하고 매입</span></div>
+    <div class="w"><b>예약 착유로 신선하게</b><span>주문을 받아 일괄 착유 후 바로 발송</span></div>
+    <div class="w"><b>HACCP 시설 생산</b><span>인증받은 시설에서 안전하게 생산</span></div>
+  </div>
+
+  <div class="cs">
+    <b>배송 안내</b> · 예약 주문 후 일괄 착유하여 발송합니다. <span class="todo">발송 주기·택배사 입력</span><br>
+    <b>교환·반품</b> · 식품 특성상 단순 변심에 의한 교환·반품은 어렵습니다. 배송 중 파손·오배송은 수령 후 7일 이내 <span class="todo">고객센터 연락처</span> 로 연락 주시면 처리해 드립니다.
+  </div>
+
+  <footer>
+    <div class="mk">gosoon</div>
+    세상에서 가장 신선한 들기름
+    <div class="lk">
+      <a href="들기름.html">들기름</a>
+      <a href="레시피.html">레시피</a>
+      <a href="히스토리.html">브랜드 이야기</a>
+    </div>
+    고순 (GOSOON) · 대표자 입력 예정 · 사업자등록번호 입력 예정<br>
+    통신판매업 신고번호 입력 예정 · 주소 입력 예정<br>
+    © 2026 GOSOON. All rights reserved.
+  </footer>
+
+</div>
+
+<script>
+  var UNIT = 25000, q = 1;
+  var qEl = document.getElementById('q'), tEl = document.getElementById('total');
+  document.querySelectorAll('.stepper button').forEach(function(b){
+    b.addEventListener('click', function(){
+      q = Math.max(1, q + (+b.dataset.d));
+      qEl.textContent = q;
+      tEl.textContent = (UNIT * q).toLocaleString('ko-KR');
+    });
+  });
+  document.querySelectorAll('.tabs button').forEach(function(b){
+    b.addEventListener('click', function(){
+      var i = +b.dataset.t;
+      document.querySelectorAll('.tabs button').forEach(function(x,xi){ x.classList.toggle('on', xi===i); });
+      document.querySelectorAll('.pane').forEach(function(x,xi){ x.classList.toggle('on', xi===i); });
+      window.scrollTo(0, 0);
+    });
+  });
+  var g = document.querySelector('.gallery'), dots = document.querySelectorAll('.dots i');
+  function syncDots(){
+    var i = Math.round(g.scrollLeft / g.clientWidth);
+    dots.forEach(function(d,di){ d.style.background = di===i ? '#222' : '#d5d5d5'; });
+  }
+  g.addEventListener('scroll', syncDots); syncDots();
+
+  console.assert((UNIT*3).toLocaleString('ko-KR') === '75,000', '총액 계산 오류');
+</script>
+
+</body>
+</html>
