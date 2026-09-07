@@ -7,3 +7,10 @@ node_modules/
 
 # 참고용 대용량 스크린샷 (Pages에 올리지 않음)
 brand/logo/www.sotbatlab.com*
+
+# 원본 카메라 파일 (웹에는 products/들기름/images/web/, 상세/web/ 축소본만 사용)
+products/**/DSCF*.JPG
+products/**/DSCF*.MOV
+products/**/IMG_*.JPG
+products/**/IMG_*.MOV
+products/**/상세페이지용사진_*

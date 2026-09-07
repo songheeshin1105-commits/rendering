@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>고순 아향긋해 들기름 — 상세페이지</title>
+<style>
+  @font-face { font-family:'Mendl Sans Dawn'; src:url('../brand-font/Mendl_Sans_Dawn_Light.otf'); font-weight:300; font-display:swap; }
+  @font-face { font-family:'Mendl Sans Dawn'; src:url('../brand-font/Mendl_Sans_Dawn_Regular.otf'); font-weight:400; font-display:swap; }
+  @font-face { font-family:'Mendl Sans Dawn'; src:url('../brand-font/Mendl_Sans_Dawn_Medium.otf'); font-weight:500; font-display:swap; }
+  @font-face { font-family:'EBS훈민정음새론'; src:url('../brand-font/EBS훈민정음새론L.ttf'); font-weight:300; font-display:swap; }
+  @font-face { font-family:'EBS훈민정음새론'; src:url('../brand-font/EBS훈민정음새론R.ttf'); font-weight:400; font-display:swap; }
+  @font-face { font-family:'EBS훈민정음새론'; src:url('../brand-font/EBS훈민정음새론SB.ttf'); font-weight:700; font-display:swap; }
+
+  :root{
+    --olive:#e4dfac; --sage:#cad3cf; --ink:#36302c; --cream:#fefcf6; --coral:#ea4c36;
+    --paper:#f4f0e4; --line:#e5e0d2;
+    --latin:'Mendl Sans Dawn','EBS훈민정음새론',sans-serif;
+    --kr:'EBS훈민정음새론','Mendl Sans Dawn',sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:#eee; font-family:var(--kr); color:var(--ink); font-size:16px; line-height:1.75; -webkit-font-smoothing:antialiased;}
+  img{max-width:100%; display:block;}
+  .page{max-width:500px; margin:0 auto; background:var(--cream);}
+  .sec{padding:52px 28px;}
+  .eyebrow{font-family:var(--kr); font-weight:400; letter-spacing:.2em; text-transform:uppercase; font-size:11px; color:#8a8172; margin:0 0 12px;}
+  h2{font-size:23px; font-weight:700; margin:0 0 18px; line-height:1.35; text-wrap:balance;}
+  p{margin:0 0 14px;}
+  .lead{color:#4c453c;}
+  .shot{background:var(--paper); border:1px dashed #c9c2ad; border-radius:10px; min-height:220px; display:flex; align-items:center; justify-content:center; text-align:center; color:#9a9078; font-size:13px; padding:24px; margin:18px 0;}
+  .shot.sm{min-height:150px;}
+  .fill{border:none; padding:0; background:transparent; min-height:0;}
+  .fill img{border-radius:10px; width:100%;}
+  .need{background:#fff5ec; border:1px solid #f6d8c6; color:#b5502f; font-size:13px; border-radius:8px; padding:12px 14px; margin:0 0 18px;}
+
+  .logo{padding:22px 28px 0; }
+  .logo img{height:28px;}
+
+  /* 1 hero */
+  .hero{background:var(--olive); text-align:center; padding:16px 28px 44px;}
+  .hero .prod{background:transparent; border:none; min-height:0; padding:0; margin:8px 0 24px;}
+  .hero .prod img{width:76%; margin:0 auto; filter:drop-shadow(0 16px 26px rgba(54,48,44,.2));}
+  .hero h1{font-size:30px; font-weight:700; margin:0 0 12px; line-height:1.3;}
+  .hero .sub{color:#5f574c; margin:0;}
+
+  /* 2 pain */
+  .pain{background:var(--ink); color:var(--cream);}
+  .pain .eyebrow{color:#9a9078;}
+  .pain h2{color:var(--cream);}
+  .pain .q{background:#43392f; border-radius:10px; padding:18px 20px; margin:10px 0; font-size:15px; color:#efe9dd;}
+
+  /* 3 diff */
+  .diff .b{border-top:2px solid var(--ink); padding:16px 0 4px;}
+  .diff .b .n{font-family:var(--latin); font-size:13px; letter-spacing:.1em; color:#8a8172; margin:0 0 6px;}
+  .diff .b h3{font-size:18px; margin:0 0 6px;}
+  .diff .b p{font-size:15px; color:#5f574c; margin:0;}
+
+  /* 5 process */
+  .steps{counter-reset:s; margin:14px 0 0;}
+  .steps .st{counter-increment:s; position:relative; padding:0 0 22px 44px; }
+  .steps .st::before{content:counter(s); position:absolute; left:0; top:0; width:28px; height:28px; border-radius:50%; background:var(--olive); color:var(--ink); font-weight:700; font-size:13px; display:flex; align-items:center; justify-content:center;}
+  .steps .st b{display:block; font-size:16px; margin-bottom:3px;}
+  .steps .st p{font-size:14px; color:#5f574c; margin:0;}
+
+  /* 6 use */
+  .use{background:var(--paper);}
+  .use .ideas{margin:16px 0 0;}
+  .use .ideas .i{border-top:1px solid var(--line); padding:14px 0;}
+  .use .ideas .i b{color:var(--coral); font-size:14px; display:block; margin-bottom:2px;}
+  .use .ideas .i span{font-size:14px; color:#4c453c;}
+
+  /* 7 spec */
+  .spec table{width:100%; border-collapse:collapse; font-size:14px;}
+  .spec th,.spec td{text-align:left; vertical-align:top; padding:11px 0; border-bottom:1px solid var(--line);}
+  .spec th{width:34%; color:#8a8172; font-weight:400;}
+  .spec .todo{color:var(--coral);}
+
+  /* 8 reviews */
+  .rev .r{background:var(--paper); border-radius:10px; padding:16px 18px; margin:10px 0;}
+  .rev .r .s{color:var(--coral); letter-spacing:.15em; font-size:12px; margin:0 0 6px;}
+  .rev .r p{font-size:14px; margin:0;}
+
+  /* 10 faq */
+  .faq dt{font-weight:700; font-size:15px; padding:16px 0 4px; border-top:1px solid var(--line);}
+  .faq dd{margin:0 0 12px; font-size:14px; color:#5f574c;}
+
+  /* end */
+  .end{background:var(--coral); color:var(--cream); text-align:center; padding:52px 28px;}
+  .end p{margin:0; font-size:20px; font-weight:700;}
+  .end .m{font-family:var(--latin); letter-spacing:.2em; font-size:13px; margin-top:10px; color:#ffe7e1;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="logo"><img src="../brand/logo/logo.png" alt="고순" onerror="this.outerHTML='&lt;span style=&quot;font-family:var(--latin);font-size:20px;letter-spacing:.24em&quot;&gt;gosoon&lt;/span&gt;'"></div>
+
+  <!-- 1. 첫 화면 -->
+  <div class="hero">
+    <div class="prod"><img src="../product-image/아향긋해들기름제품사진.png" alt="고순 아향긋해 들기름 180ml"
+      onerror="this.parentNode.innerHTML='&lt;div class=\'shot\'&gt;여기에 제품 단독 컷을 넣으세요&lt;/div&gt;'"></div>
+    <p class="eyebrow">Gosoon · Perilla Oil 180ml</p>
+    <h1>Tasting Note</h1>
+    <p class="sub">고소한 캐슈넛의 단맛 위로,<br>깻잎의 푸른 향이 잔잔히 감도는 피니쉬</p>
+  </div>
+
+  <!-- 2. 공감 -->
+  <div class="sec pain">
+    <p class="eyebrow">이런 적 없으세요?</p>
+    <h2>들기름, 사놓고<br>어디에 쓰세요?</h2>
+    <div class="q">“나물 무침은 이제 거의 안 해먹는데…”</div>
+    <div class="q">“들기름 막국수도 완제품 사 먹는데, 이건 어디에 쓰지?”</div>
+    <div class="q">“가격도 보고 품질도 보고 싶은데, 뭘 믿어야 할지”</div>
+  </div>
+
+  <!-- 3. 뭐가 다른가 -->
+  <div class="sec diff">
+    <p class="eyebrow">Why Gosoon</p>
+    <h2>고순 들기름은<br>세 가지가 다릅니다</h2>
+    <div class="b"><p class="n">01</p><h3>깊은 향, 깔끔한 뒷맛</h3><p>그저 고소하기만 한 들기름이 아니라, 올리브오일처럼 향긋하게 즐기는 들기름입니다.</p></div>
+    <div class="b"><p class="n">02</p><h3>갓 짠 신선함</h3><p>시간이 지나면 산패되는 들기름. 고순은 신선한 상태 그대로 전해드립니다.</p></div>
+    <div class="b"><p class="n">03</p><h3>오메가3 풍부한 K-OIL</h3><p>몸에도 좋고 맛도 좋은 우리 전통 기름을 매일 식탁에서.</p></div>
+  </div>
+
+  <!-- 4. 신선함의 비결 -->
+  <div class="sec">
+    <p class="eyebrow">Freshness</p>
+    <h2>왜 신선한가</h2>
+    <p class="need">아래 문장은 예시입니다. 실제 방식(주문 후 압착 / 소량 생산 / 저온압착 / 발송 주기 등)으로 바꿔 주세요.</p>
+    <p class="lead">고순은 한 번에 많이 짜두지 않습니다. <b>주문이 들어오면 그때 압착해</b> 산패가 시작되기 전에 보내드립니다. 병에 담기는 순간이 가장 신선한 상태입니다.</p>
+    <div class="shot">여기에 압착 직후 / 병입 장면 사진을 넣으세요</div>
+  </div>
+
+  <!-- 5. 이렇게 만듭니다 -->
+  <div class="sec use">
+    <p class="eyebrow">How it's made</p>
+    <h2>이렇게 만듭니다</h2>
+    <p class="need">원산지·볶음 온도·압착 방식은 실제 값으로 채워 주세요.</p>
+    <div class="steps">
+      <div class="st"><b>1. 들깨 준비</b><p>원산지: [국산 / 수입 — 입력]. 잘 여문 들깨만 골라냅니다.</p></div>
+      <div class="st"><b>2. 세척 · 건조</b><p>이물질을 걸러내고 깨끗이 씻어 말립니다.</p></div>
+      <div class="st"><b>3. 볶음</b><p>향은 살리고 쓴맛은 나지 않게 [온도/시간 — 입력] 볶습니다.</p></div>
+      <div class="st"><b>4. 압착</b><p>[저온압착 / 생압착 — 입력] 방식으로 첫 기름만 담습니다.</p></div>
+    </div>
+    <div class="shot">여기에 들깨 → 볶음 → 압착 과정 사진을 넣으세요</div>
+  </div>
+
+  <!-- 6. 제품 디테일 -->
+  <div class="sec">
+    <p class="eyebrow">The oil</p>
+    <h2>색과 향으로 압니다</h2>
+    <div class="shot">여기에 기름을 따르는 클로즈업 (색·점도가 보이게) 사진을 넣으세요</div>
+    <p class="lead">맑고 진한 황금빛, 코끝에 먼저 오는 고소한 향. 한 스푼이면 요리 전체의 향이 달라집니다.</p>
+  </div>
+
+  <!-- 7. 이렇게 드세요 -->
+  <div class="sec use">
+    <p class="eyebrow">How to use</p>
+    <h2>복잡한 레시피는<br>필요 없습니다</h2>
+    <p class="lead">따뜻한 흰쌀밥에 들기름 한 스푼을 비벼 김에 싸 드세요. 그것만으로 충분합니다.</p>
+    <div class="shot">여기에 밥 + 들기름 + 김 한 장면을 넣으세요</div>
+    <div class="ideas">
+      <div class="i"><b>강된장에 한 스푼</b><span>다 된 강된장에 마지막으로 둘러 향을 확 살리기</span></div>
+      <div class="i"><b>냉파스타</b><span>삶아 헹군 면에 들기름·간장을 둘러 고소하고 향긋하게</span></div>
+      <div class="i"><b>볶음 요리 마무리</b><span>불을 끈 뒤 살짝 둘러 향을 입히기</span></div>
+    </div>
+  </div>
+
+  <!-- 8. 제품 정보 -->
+  <div class="sec spec">
+    <p class="eyebrow">Product info</p>
+    <h2>제품 정보</h2>
+    <p class="need">식품 표시사항입니다. [입력]으로 표시된 항목은 실제 값을 반드시 채워 주세요.</p>
+    <table>
+      <tr><th>제품명</th><td>아향긋해 들기름</td></tr>
+      <tr><th>식품유형</th><td>식용유지 (들기름)</td></tr>
+      <tr><th>내용량</th><td>180ml <span class="todo">(확인)</span></td></tr>
+      <tr><th>원재료명</th><td class="todo">들깨 함량·원산지 [입력]</td></tr>
+      <tr><th>원산지</th><td class="todo">[입력]</td></tr>
+      <tr><th>제조원</th><td class="todo">[상호 · 주소 입력]</td></tr>
+      <tr><th>판매원</th><td>고순 <span class="todo">(상호·주소 입력)</span></td></tr>
+      <tr><th>유통기한</th><td class="todo">제조일로부터 [개월] / 별도 표기</td></tr>
+      <tr><th>보관방법</th><td class="todo">[직사광선 피해 실온 / 개봉 후 냉장 등 입력]</td></tr>
+      <tr><th>주의사항</th><td>개봉 후에는 냉장 보관하고 가급적 빨리 드세요.</td></tr>
+    </table>
+  </div>
+
+  <!-- 9. 후기 -->
+  <div class="sec rev">
+    <p class="eyebrow">Reviews</p>
+    <h2>고객님들의 이야기</h2>
+    <p class="need">실제 후기로 교체해 주세요. (아래는 예시)</p>
+    <div class="r"><p class="s">★★★★★</p><p>“향 자체가 달라요. 밥에 비벼 김에 싸 먹었는데 반찬이 필요 없더라고요.”</p></div>
+    <div class="r"><p class="s">★★★★★</p><p>“뒷맛이 깔끔해서 계속 손이 가요. 향이 진해서 조금만 넣어도 충분해요.”</p></div>
+  </div>
+
+  <!-- 10. FAQ -->
+  <div class="sec faq">
+    <p class="eyebrow">FAQ</p>
+    <h2>자주 묻는 질문</h2>
+    <dl>
+      <dt>Q. 나물 무침 말고 다르게 쓸 수 있나요?</dt>
+      <dd>흰쌀밥에 비벼 김에 싸 먹는 게 가장 쉽습니다. 볶음 요리 마무리에 둘러도 향이 삽니다.</dd>
+      <dt>Q. 볶음 요리에 바로 써도 되나요?</dt>
+      <dd>들기름은 발연점이 낮아 고온 조리보다 마무리에 뿌려 향을 살리는 걸 추천드려요.</dd>
+      <dt>Q. 보관은 어떻게 하나요?</dt>
+      <dd>개봉 후 냉장 보관, 가급적 빠른 시일 내에 드시는 걸 추천드립니다.</dd>
+    </dl>
+  </div>
+
+  <!-- 11. 배송 / 교환·반품 -->
+  <div class="sec">
+    <p class="eyebrow">Delivery</p>
+    <h2>배송 / 교환·반품</h2>
+    <p class="need">실제 정책으로 채워 주세요.</p>
+    <p class="lead"><b>배송</b> · [발송 주기 / 택배사 / 아이스박스 여부 입력]<br>
+    <b>교환·반품</b> · 식품 특성상 단순 변심 교환·반품은 어렵습니다. 배송 중 파손·오배송은 수령 후 [일수] 이내 연락 주시면 교환해 드립니다. [연락처 입력]</p>
+  </div>
+
+  <!-- 12. 마무리 -->
+  <div class="end">
+    <p>세상에서 가장 신선한 들기름</p>
+    <div class="m">GOSOON</div>
+  </div>
+
+</div>
+</body>
+</html>
