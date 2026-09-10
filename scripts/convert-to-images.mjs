@@ -2,14 +2,16 @@ import puppeteer from "puppeteer";
 import path from "node:path";
 import fs from "node:fs/promises";
 
-const CONTENT_WIDTH = 500;      // 모바일 단일 컬럼 렌더 폭
-const TARGET_WIDTH = 860;       // 스마트스토어 권장 폭
-const SCALE = TARGET_WIDTH / CONTENT_WIDTH;
+// 3번째 인자: 렌더 폭(CSS px). 없으면 모바일 500px.
+// 4번째 인자: 해상도 배율. 없으면 폭 지정 시 2배, 미지정 시 1.72배(860/500). 글자 뭉개짐 방지용 supersampling.
+const CONTENT_WIDTH = Number(process.argv[3]) || 500;
+const SCALE = Number(process.argv[4]) || (process.argv[3] ? 2 : 860 / 500);
+const TARGET_WIDTH = Math.round(CONTENT_WIDTH * SCALE); // 실제 출력 이미지 가로 픽셀
 const MAX_SECTION_HEIGHT = 2000; // 섹션당 최대 세로 (원본 CSS px 기준)
 
 const htmlPath = process.argv[2];
 if (!htmlPath) {
-  console.error("사용법: node scripts/convert-to-images.mjs output/[상품명].html");
+  console.error("사용법: node scripts/convert-to-images.mjs output/[상품명].html [렌더폭]");
   process.exit(1);
 }
 

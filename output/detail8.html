@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[고순] 아, 향긋해 들기름 — 상세페이지</title>
+<style>
+  @font-face{font-family:'Saeron';src:url('../brand-font/EBS훈민정음새론L.ttf');font-weight:300;font-display:swap;}
+  @font-face{font-family:'Saeron';src:url('../brand-font/EBS훈민정음새론R.ttf');font-weight:400;font-display:swap;}
+  @font-face{font-family:'Saeron';src:url('../brand-font/EBS훈민정음새론SB.ttf');font-weight:700;font-display:swap;}
+  @font-face{font-family:'Pretendard';src:url('../brand-font/PretendardVariable.ttf');font-weight:100 900;font-display:swap;}
+  @font-face{font-family:'Mendl';src:url('../brand-font/Mendl_Sans_Dawn_Regular.otf');font-weight:400;font-display:swap;}
+  @font-face{font-family:'Mendl';src:url('../brand-font/Mendl_Sans_Dawn_Medium.otf');font-weight:500;font-display:swap;}
+
+  :root{
+    --cream:#f4efe1; --paper:#ece3cf; --green:#2f7d4f; --green-deep:#20583a;
+    --brown:#8a5a3c; --ink:#1f1b16; --sand:#c9a97f;
+    --body:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;
+    --disp:'Saeron','Pretendard',sans-serif;
+    --latin:'Mendl',serif;
+  }
+  *{box-sizing:border-box;margin:0;}
+  html,body{margin:0;}
+  body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.85;-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:940px;margin:0 auto;padding:0 24px;}
+
+  section{padding:96px 0;position:relative;}
+  .tag{font-family:var(--latin);font-size:13px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;opacity:.85;margin:0 0 22px;}
+  .disp{font-family:var(--disp);font-weight:700;letter-spacing:-.01em;line-height:1.16;}
+  h1.disp{font-size:clamp(38px,9vw,76px);}
+  h2.disp{font-size:clamp(30px,6.4vw,56px);}
+  .lead{max-width:30em;font-size:clamp(16px,2.2vw,19px);line-height:2;}
+  .lead.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .en{font-family:var(--latin);font-size:14px;letter-spacing:.16em;opacity:.7;margin-top:18px;}
+
+  .faq{max-width:34em;margin:20px auto 0;}
+  .faq dt{font-family:var(--disp);font-weight:700;font-size:18px;line-height:1.4;margin-top:32px;}
+  .faq dt:first-of-type{margin-top:0;}
+  .faq dt::before{content:"Q. ";color:var(--brown);}
+  .faq dd{margin:9px 0 0;font-size:14.5px;line-height:1.85;opacity:.82;}
+
+  /* 색면 변형 */
+  .s-ink{background:var(--ink);color:var(--cream);}
+  .s-green{background:var(--green);color:#f3efe1;}
+  .s-greend{background:var(--green-deep);color:#f3efe1;}
+  .s-brown{background:var(--brown);color:#f6efe4;}
+  .s-cream{background:var(--cream);}
+  .s-paper{background:var(--paper);}
+  .s-ink .tag,.s-green .tag,.s-greend .tag,.s-brown .tag{opacity:.75;}
+
+  /* 히어로 */
+  .hero{background:#0b0908;color:#f4efe1;text-align:center;padding:60px 0 0;}
+  .hero .tag{color:#c9a97f;}
+  .hero h1.disp{color:#f4efe1;margin-top:6px;}
+  .hero .accent{color:#8fce9f;}
+  .hero .en{opacity:.5;}
+  .hero .hero-shot{margin:28px 0 0;}
+  .hero .hero-shot img{width:100%;max-width:460px;margin:0 auto;}
+
+  /* 2단 (사진+글) */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center;}
+  .split.narrow{grid-template-columns:0.85fr 1fr;}
+  .split .fig{margin:0;}
+  .split .fig img{width:100%;border-radius:2px;}
+  .split figcaption{font-size:13px;letter-spacing:.04em;opacity:.6;margin-top:10px;}
+
+  /* 풀블리드 사진 */
+  .bleed{margin:0;}
+  .bleed img{width:100%;max-height:82vh;object-fit:cover;}
+  .bleed figcaption{max-width:940px;margin:14px auto 0;padding:0 24px;font-size:13px;letter-spacing:.04em;opacity:.6;}
+
+  /* 라벨 포스터 */
+  .poster{text-align:center;}
+  .poster img{max-width:520px;margin:0 auto;}
+  .poster .cap{font-family:var(--disp);font-weight:700;font-size:clamp(22px,4vw,34px);letter-spacing:.12em;margin-top:26px;}
+
+  /* 대형 선언 */
+  .declare{text-align:center;}
+  .declare .big{font-family:var(--disp);font-weight:700;font-size:clamp(56px,17vw,150px);letter-spacing:.14em;line-height:1;}
+  .declare .sub{max-width:24em;margin:26px auto 0;font-size:clamp(15px,2vw,18px);line-height:1.9;opacity:.92;}
+
+  /* 인용 */
+  .quote{font-family:var(--disp);font-weight:700;font-size:clamp(20px,3.4vw,30px);line-height:1.5;letter-spacing:-.01em;margin:30px 0 0;}
+
+  /* 활용 */
+  .ways{list-style:none;padding:0;margin:26px 0 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .ways li{border:1.5px solid currentColor;border-radius:999px;padding:9px 18px;font-size:15px;opacity:.9;}
+  .usegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:32px;}
+  .usegrid figure{margin:0;position:relative;aspect-ratio:1/1;overflow:hidden;background:#e0d6bd;}
+  .usegrid figure img{width:100%;height:100%;object-fit:cover;}
+  .usegrid figcaption{position:absolute;left:0;right:0;bottom:0;padding:9px 11px;font-size:12.5px;font-weight:600;color:#fff;background:linear-gradient(180deg,transparent,rgba(0,0,0,.55));text-align:left;}
+  @media(max-width:620px){.usegrid{grid-template-columns:repeat(2,1fr);}}
+
+  /* 신선함 체크 */
+  .checks{list-style:none;padding:0;margin:28px 0 0;max-width:30em;}
+  .checks li{padding:14px 0;border-top:1px solid rgba(246,239,228,.28);font-size:16px;}
+  .checks li:last-child{border-bottom:1px solid rgba(246,239,228,.28);}
+
+  /* 고시정보 */
+  .gosi table{width:100%;max-width:660px;margin:8px auto 0;border-collapse:collapse;font-size:14px;}
+  .gosi th,.gosi td{text-align:left;vertical-align:top;padding:10px 8px;border-bottom:1px solid #3a342c;line-height:1.7;}
+  .gosi th{width:38%;color:#a99a80;font-weight:400;}
+  .gosi td{color:#e9e1d2;}
+  .gosi .fine{max-width:660px;margin:14px auto 0;font-size:12px;color:#948870;line-height:1.7;}
+
+  .pl3{aspect-ratio:16/10;background:#e0d6bd;border:1.5px dashed #b6a985;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;color:#8a7f63;padding:16px;}
+
+  /* CHECK POINT — 좋은 들기름 즐기는 법 */
+  .cp-panel{background:#eef0dd;border-radius:6px;padding:96px 24px 84px;text-align:center;position:relative;}
+  .cp-badge{position:absolute;left:50%;top:34px;transform:translateX(-50%) rotate(-8deg);width:104px;height:104px;border:1.5px solid var(--ink);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--latin);font-size:13px;font-weight:600;letter-spacing:.16em;line-height:1.5;color:var(--ink);background:#eef0dd;}
+  .cp-title{font-family:var(--disp);font-weight:700;font-size:clamp(28px,6vw,52px);line-height:1.22;letter-spacing:-.01em;color:#4fa96a;margin:44px 0 0;}
+  .pointrow{max-width:640px;margin:0 auto;padding-top:72px;text-align:center;}
+  .pointrow h3{font-family:var(--disp);font-weight:700;font-size:clamp(20px,3.4vw,26px);color:#2f7d4f;margin:0 0 26px;line-height:1.35;text-align:center;}
+  .pointrow h3 .no{font-family:var(--latin);font-size:.82em;font-weight:500;color:var(--brown);margin-right:5px;}
+  .pointrow .cpimg{background:#e9edcf;border-radius:4px;padding:34px;max-width:480px;margin:0 auto 26px;}
+  .pointrow .cpimg img{width:100%;object-fit:contain;}
+  .pointrow p{max-width:30em;margin:0 auto;font-size:clamp(15px,2vw,17px);line-height:1.95;color:#4a443c;}
+  .cp-store{max-width:640px;margin:76px auto 0;text-align:center;font-size:14px;color:#8a8172;line-height:1.9;}
+
+  @media(max-width:720px){
+    section{padding:64px 0;}
+    .split,.split.narrow{grid-template-columns:1fr;}
+    .split .fig.after{order:2;}
+  }
+</style>
+</head>
+<body>
+
+<img src="event-banner.jpg" alt="추석 이벤트 안내" style="width:100%;display:block;">
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="wrap">
+    <p class="tag">GOSOON · 첫 번째 들깨향 시리즈 No.1</p>
+    <h1 class="disp">아, <span class="accent">향긋해</span><br>들기름</h1>
+    <p class="en">Ah, it smells good — perilla oil</p>
+  </div>
+  <figure class="hero-shot"><img src="../products/들기름/images/detail8/bottle-dark.jpg" alt="아, 향긋해 들기름"></figure>
+</section>
+
+<!-- 2. WHO'S 고순 -->
+<section class="s-cream">
+  <div class="wrap split">
+    <figure class="fig"><img src="../products/들기름/images/detail8/farmer-field.jpg" alt="농부와 들깨밭에서">
+      <figcaption>농부님과 들깨밭에서</figcaption></figure>
+    <div>
+      <p class="tag" style="color:var(--green)">Who's 고순?</p>
+      <h2 class="disp">들깨를 연구하는<br>사람입니다</h2>
+      <p class="lead" style="margin-top:22px">안녕하세요, 들깨연구가 고순입니다. 팜투테이블 셰프 출신으로 식재료가 가진 맛과 향에 집중하다가, 들깨도 품종별로 맛과 향이 다르다는 논문을 읽었습니다. 그 길로 전국의 들깨 농가를 찾아다니기 시작했어요.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. 선언: 품종 -->
+<section class="s-green declare">
+  <div class="wrap">
+    <p class="tag">5 varieties · 8 regions</p>
+    <h2 class="disp" style="font-size:clamp(28px,6.4vw,56px)">놀랍게도 들깨에는<br>약 50여 가지 품종이 있어요</h2>
+    <p class="sub">그렇게 1년간 찾은 것이 <b>8가지 지역의 5가지 품종</b>입니다.</p>
+  </div>
+</section>
+
+<!-- 4. 떼루아 -->
+<figure class="bleed">
+  <img src="../products/들기름/images/detail8/land-field.jpg" alt="들깨가 자라는 땅">
+  <figcaption>같은 들깨라도 자란 땅에 따라 향이 다릅니다</figcaption>
+</figure>
+<section class="s-cream">
+  <div class="wrap">
+    <p class="lead center">실제로 와인과 커피처럼, 들깨가 자라온 떼루아와 농부의 손길, 그리고 품종에 따라 달라지는 들기름의 맛을 경험했습니다. 익숙한 ‘고소함’에 가려진 들기름의 다채로운 향미를 소개하고자 합니다. 들기름을 맛과 향으로 즐길 수 있는 세상을 만들고 싶어요.</p>
+  </div>
+</section>
+
+<!-- 5. 라벨 포스터 -->
+<section class="s-paper poster">
+  <div class="wrap">
+    <img src="../products/들기름/images/detail8/label-zoom-tight.png" alt="아, 향긋해 들기름 라벨">
+    <p class="cap">들깨맛은 원래 향긋해</p>
+  </div>
+</section>
+
+<!-- 6. 향 긋 함 -->
+<section class="s-greend declare">
+  <div class="wrap">
+    <p class="tag">The first note</p>
+    <p class="big">향 긋 함</p>
+    <p class="en" style="opacity:.6;letter-spacing:.4em">FRAGRANT</p>
+    <p class="sub">고순이 첫 번째로 고른 들기름의 향입니다.</p>
+  </div>
+</section>
+
+<!-- 7. 방앗간·할머니 -->
+<section class="s-cream">
+  <div class="wrap" style="max-width:720px">
+    <p class="tag" style="color:var(--brown);text-align:center">할머니의 들기름</p>
+    <h2 class="disp" style="text-align:center">방앗간에서 갓 짠 들기름,<br>드셔보셨죠?</h2>
+    <p class="lead" style="margin:26px auto 0">노란 뚜껑은 들기름, 빨강 뚜껑은 참기름. 저 역시 30년간 할머니가 농사지은 들깨를 방앗간에서 짜서 받아먹던 들깨수저입니다. 그 고소한 맛을 잊지 못해요.</p>
+    <p class="lead" style="margin:20px auto 0">방앗간에서 할머니가 주신 들기름은 왜 모두가 맛있다고 할까요? 그 이유는 좋은 깨와 신선함에 있습니다. 자식과 손주를 위해 할머니는 직접 농사를 짓거나 동네에서 가장 풍년인 들깨밭의 깨를 사와, 자식들이 오기 바로 전날 방앗간에 가서 종일 깨 짜는 걸 지켜보며 가져오시죠. 그 노력이 만들어낸 결과입니다.</p>
+    <p class="quote" style="text-align:center;margin-top:34px">참기름, 들기름을 고를 때<br>가장 중요한 건 바로 이겁니다.<br><b>"좋은 깨. 신선함"</b></p>
+  </div>
+</section>
+
+<!-- 8. 한 가지 더 — 로스팅 철학 -->
+<section class="s-ink">
+  <div class="wrap">
+    <p class="tag" style="text-align:center">One more thing</p>
+    <h2 class="disp" style="text-align:center">고순은 여기서<br>한 가지를 더 하고 싶었습니다</h2>
+  </div>
+  <figure class="bleed" style="margin-top:44px">
+    <img src="../products/들기름/images/detail8/roast-pour.jpg" alt="갓 볶은 들깨">
+  </figure>
+  <div class="wrap" style="max-width:640px;margin-top:44px">
+    <p class="lead" style="font-size:15px;line-height:1.9">우리가 아는 고소함은 많이 볶을수록 생기는 2차적인 향입니다. 커피의 강배전, 약배전과 같은 원리죠.</p>
+    <p class="lead" style="font-size:15px;line-height:1.9;margin-top:20px">스페셜티 커피는 가장 좋은 생두로 만듭니다. 좋은 원물일수록 그 맛을 해치지 않고, 살려서 먹곤 하죠. 팜투테이블 셰프로 근무할 때도 마찬가지였습니다. 매일 아침 전국 산지에서 오는 신선한 재료에는 그 어떤 조미료도, 강한 소금간도, 인위적인 단맛도 필요 없었어요.</p>
+    <p class="lead" style="font-size:15px;line-height:1.9;margin-top:20px">깨도 마찬가지입니다. 좋은 깨를, 그 깨가 가진 최상의 맛을 끌어내는 로스팅 시간과 온도로 다채로운 맛과 향을 끌어내는 것이죠.</p>
+    <p class="lead" style="font-size:15px;line-height:1.9;margin-top:20px">50년차 방앗간 사부님 옆에서 1년간, 10년차 커피 로스터와 함께 약 100여 종의 깨를 볶았습니다. 그렇게 우리가 선보일 첫 번째 들기름 향을 ‘향긋함’으로 정했습니다.</p>
+  </div>
+
+  <div class="wrap" style="max-width:520px;margin-top:72px;text-align:center">
+    <h3 class="disp" style="font-size:26px">기름을 만들 때, 당연히 지킵니다</h3>
+    <p style="margin-top:10px;font-size:14px;opacity:.55;line-height:1.7">당연한 이야기라 길게 하진 않겠습니다.</p>
+    <ol style="list-style:none;margin:28px 0 0;padding:0;border-top:1px solid rgba(255,255,255,.18)">
+      <li style="padding:20px 2px;border-bottom:1px solid rgba(255,255,255,.18);font-size:18px;line-height:1.55">
+        <span style="display:block;opacity:.45;font-weight:700;font-variant-numeric:tabular-nums;font-size:13px;letter-spacing:.1em;margin-bottom:4px">01</span>
+        HACCP 인증 시설에서 제조합니다
+      </li>
+      <li style="padding:20px 2px;border-bottom:1px solid rgba(255,255,255,.18);font-size:18px;line-height:1.55">
+        <span style="display:block;opacity:.45;font-weight:700;font-variant-numeric:tabular-nums;font-size:13px;letter-spacing:.1em;margin-bottom:4px">02</span>
+        30도 이하 저온으로 착유합니다
+      </li>
+      <li style="padding:20px 2px;border-bottom:1px solid rgba(255,255,255,.18);font-size:18px;line-height:1.55">
+        <span style="display:block;opacity:.45;font-weight:700;font-variant-numeric:tabular-nums;font-size:13px;letter-spacing:.1em;margin-bottom:4px">03</span>
+        저온에서 소량씩, 갓 짜서 보내드립니다
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- 9. 들내 -->
+<section class="s-cream">
+  <div class="wrap split narrow">
+    <figure class="fig"><img src="../products/들기름/images/detail8/seed-hand.jpg" alt="농부에게 받은 들깨 원물"></figure>
+    <div>
+      <p class="tag" style="color:var(--green)">'들내'</p>
+      <h2 class="disp">포대를 열면<br>퍼지는 향</h2>
+      <p class="lead" style="margin-top:22px">농부님께 들깨를 받아와 포대를 열면, 좋은 깨에서만 유난히 진동하는 들깨의 ‘들내’가 있는데요. 그게 참 향긋합니다. 깻잎 향이랑 비슷해요. 이 향이 얼마나 매력적인지 모를 사람들을 위해 소개하고 싶었습니다.</p>
+      <p class="quote">“들기름이 어떻게 향긋할 수 있어?”<br>— 진짜 향긋하네!</p>
+    </div>
+  </div>
+</section>
+
+<!-- 9. 어떻게 먹지 -->
+<section class="s-cream">
+  <div class="wrap" style="text-align:center">
+    <p class="tag" style="color:var(--green)">Everyday, everywhere</p>
+    <h2 class="disp">일상에서<br>언제나 휘휘</h2>
+    <p class="lead center" style="margin-top:20px">가볍고 풍미가 좋아 엑스트라버진 올리브오일처럼. 두부, 김치찜, 솥밥 같은 한식 위에 휘휘 둘러서 드셔도 좋고, 사워도우빵, 흰살생선회 등에 찍어 드셔도 좋습니다.</p>
+    <figure class="fig" style="margin:34px auto 0">
+      <img src="../products/들기름/images/detail8/food-pour.jpg" alt="요리에 들기름을 두르는 모습">
+      <figcaption>한 바퀴 휘휘, 그걸로 충분합니다</figcaption>
+    </figure>
+    <ul class="ways">
+      <li>두부</li><li>김치찜</li><li>솥밥</li><li>사워도우빵</li><li>흰살생선회</li>
+    </ul>
+    <div class="usegrid">
+      <figure><img src="../products/들기름/images/detail8/food-tofu.jpg" alt="두부에 들기름"><figcaption>두부 한 모에</figcaption></figure>
+      <figure><img src="../products/들기름/images/detail8/food-jjim.jpg" alt="찜 요리에 들기름"><figcaption>찜·볶음 위에</figcaption></figure>
+      <figure><img src="../products/들기름/images/detail8/food-rice.jpg" alt="주먹밥에 들기름"><figcaption>밥·주먹밥에</figcaption></figure>
+      <figure><img src="../products/들기름/images/detail8/food-bread.jpg" alt="사워도우빵에 들기름"><figcaption>빵에 찍어</figcaption></figure>
+      <figure><img src="../products/들기름/images/detail8/food-hoe.jpg" alt="흰살생선회에 들기름"><figcaption>흰살회에 곁들여</figcaption></figure>
+      <figure><img src="../products/들기름/images/detail8/food-egg.jpg" alt="계란프라이에 들기름"><figcaption>계란프라이 위에</figcaption></figure>
+    </div>
+    <figure class="fig" style="max-width:560px;margin:28px auto 0">
+      <img src="../products/들기름/images/detail8/food-pasta.jpg" alt="가지 파스타에 들기름">
+      <figcaption>가지 파스타에도 — 올리브오일 대신 한 바퀴</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 10. 좋은 들기름 즐기는 법 (CHECK POINT) -->
+<section class="s-cream">
+  <div class="wrap">
+    <div class="cp-panel">
+      <span class="cp-badge">CHECK<br>POINT</span>
+      <p class="cp-title">좋은 들기름을<br>잘, 더 오래, 더 편하게<br>즐기는 법</p>
+    </div>
+
+    <div class="pointrow">
+      <h3><span class="no">01.</span>착유일자를 확인해주세요</h3>
+      <div class="cpimg"><img src="../products/들기름/images/detail8/check-1.png" alt="병에 표기된 착유일자"></div>
+      <p>산화에 취약한 들기름은 생들기름인지, 저온압착인지보다 얼마나 신선한 기름인지가 더 중요합니다. 그래서 들기름을 고를 때는 착유일자가 표기되어 있는지를 확인해야 합니다. 고순은 예약주문을 받아 소량씩 착유하고, 착유일자를 제품에 정확하게 표기합니다.</p>
+    </div>
+
+    <div class="pointrow">
+      <h3><span class="no">02.</span>차광병은 선택이 아니라 필수입니다</h3>
+      <div class="cpimg"><img src="../products/들기름/images/detail8/check-2.png" alt="빛을 막아주는 차광병"></div>
+      <p>들기름에는 오메가-3 지방산인 α-리놀렌산(ALA)이 약 60% 함유되어 있습니다. 불포화지방산이 풍부한 들기름은 빛과 산소에 의해 산화되기 쉽습니다. 그래서 고순은 차광병을 사용합니다.</p>
+    </div>
+
+    <div class="pointrow">
+      <h3><span class="no">03.</span>깔끔하게 따르는 푸어러캡</h3>
+      <div class="cpimg"><img src="../products/들기름/images/detail8/check-3.png" alt="깔끔하게 따르는 푸어러 캡"></div>
+      <p>병을 타고 흘러내리는 불편함을 줄이고 필요한 만큼 깔끔하게 따를 수 있도록. 오일병 전용 푸어러캡을 사용했습니다. 더 자주, 더 편하게 들기름을 즐겨주세요.</p>
+    </div>
+
+    <p class="no" style="text-align:center;margin:84px 0 6px">아 참, 가장 중요한 것!</p>
+    <p class="cp-title" style="text-align:center;font-size:clamp(22px,4.6vw,36px);margin:0">들기름은 냉장보관입니다</p>
+    <p style="text-align:center;font-size:clamp(15px,2vw,17px);color:#4a443c;margin:14px 0 0">꼭 지켜주세요</p>
+  </div>
+</section>
+
+<!-- 11. FAQ -->
+<section class="s-cream">
+  <div class="wrap" style="text-align:center">
+    <p class="tag">Before you buy</p>
+    <h2 class="disp">자주 묻는 질문</h2>
+    <dl class="faq" style="text-align:left">
+      <dt>소비기한이 어떻게 되나요?</dt>
+      <dd>제조일로부터 12개월 이내입니다. 라벨에 착유일자를 적어 보내드려요. 개봉 후에는 직사광선을 피해 냉장 보관해 주세요.</dd>
+      <dt>주문하면 바로 오나요?</dt>
+      <dd>고순 들기름은 예약 주문을 모아 한 번에 갓 착유합니다. 착유일 이후 순차 발송돼요. (예: 9월은 9월 14일 착유 후 9월 16일부터 발송)</dd>
+      <dt>왜 갈색 병에 담겨 오나요?</dt>
+      <dd>들기름의 오메가3(알파리놀렌산)는 빛에 약해 쉽게 산패합니다. 그래서 빛을 막는 갈색 차광 유리병에 담습니다.</dd>
+      <dt>들기름인데 고소하지 않다고요?</dt>
+      <dd>진하게 볶을수록 짙어지는 2차 향이 '고소함'입니다. 고순은 들깨 본연의 향긋함이 살아있는 지점에서 로스팅을 멈춰요. 그래서 향이 밝습니다.</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- 12. 상품고시정보 -->
+<section class="s-ink gosi">
+  <div class="wrap">
+    <p class="tag" style="text-align:center">상품고시정보</p>
+    <table>
+      <tr><th>제품명</th><td>고순 들기름 (아, 향긋해 들기름)</td></tr>
+      <tr><th>식품의 유형</th><td>들기름</td></tr>
+      <tr><th>포장단위별 용량</th><td>180ml (180g)</td></tr>
+      <tr><th>원재료명 및 함량</th><td>들깨(국산) 100%</td></tr>
+      <tr><th>포장재질</th><td>용기-유리, 뚜껑-PP</td></tr>
+      <tr><th>소비기한</th><td>제조일로부터 12개월 이내</td></tr>
+      <tr><th>보관방법</th><td>직사광선을 피한 냉장보관</td></tr>
+      <tr><th>제조원</th><td>창창푸드 · 전북 완주군 신지송광로 183</td></tr>
+      <tr><th>유통전문판매원</th><td>고순 · 서울특별시 영등포구 당산로28길 5, 6층 S126호</td></tr>
+      <tr><th>반품 및 교환</th><td>판매원 및 구입처</td></tr>
+      <tr><th>알레르기 유발 물질</th><td>이 제품은 대두를 제품과 같은 제조 시설에서 제조하고 있습니다</td></tr>
+      <tr><th>유전자변형식품 여부</th><td>해당 없음</td></tr>
+      <tr><th>품목제조보고번호</th><td>2020049802124</td></tr>
+    </table>
+    <table style="margin-top:22px">
+      <tr><th colspan="2" style="color:#e9e1d2;font-weight:700;font-size:14px">영양정보 (총 내용량 180g, 100g당)</th></tr>
+      <tr><th>열량</th><td>867kcal</td></tr>
+      <tr><th>나트륨</th><td>0.21mg (0%)</td></tr>
+      <tr><th>탄수화물 / 당류</th><td>5.77g (2%) / 0g (0%)</td></tr>
+      <tr><th>지방 / 트랜스지방 / 포화지방</th><td>93.55g (173%) / 0g / 7.94g (53%)</td></tr>
+      <tr><th>콜레스테롤</th><td>0mg (0%)</td></tr>
+      <tr><th>단백질</th><td>0.59g (1%)</td></tr>
+    </table>
+    <p class="fine">1일 영양성분 기준치에 대한 비율(%)은 2,000kcal 기준이므로 개인의 필요 열량에 따라 다를 수 있습니다.</p>
+  </div>
+</section>
+
+<!-- 12. 배송 안내 -->
+<section class="s-paper">
+  <div class="wrap" style="text-align:center">
+    <p class="tag" style="color:var(--brown)">Delivery</p>
+    <p class="lead center" style="font-size:18px">직접 짠 신선한 들기름을 받아보세요.<br>9월은 9월 14일 착유 후 순차적으로 발송됩니다.</p>
+  </div>
+</section>
+
+
+</body>
+</html>

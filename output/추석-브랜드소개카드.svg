@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  고순 브랜드 소개 카드 (추석 3종) — 택배 동봉용
+  크기: 105 x 99 mm  ( A4(210x297) 를 가로 2 x 세로 3 으로 나눈 1/6 조각 )
+  1 유닛 = 1 mm
+
+  일러스트레이터에서 수정하는 법
+  - 이 파일을 그대로 열면 아트보드가 105 x 99mm 로 잡히고,
+    모든 글자는 편집 가능한 텍스트로 들어옵니다.
+  - 글꼴: 'EBS훈민정음새론' (brand-font 폴더). 없으면 자동 대체되니 설치 후 여세요.
+
+  인쇄 넘기기 전 체크
+  1) 글자 전체 선택 → [문자] > [윤곽선 만들기] 로 아웃라인화
+  2) 필요하면 사방 3mm 도련(재단 여유) 추가
+  3) 색상 모드 CMYK 로 변환
+-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="105mm" height="99mm" viewBox="0 0 105 99">
+
+  <!-- 배경 -->
+  <rect x="0" y="0" width="105" height="99" fill="#fefcf6"/>
+  <rect x="0" y="0" width="2" height="99" fill="#e4dfac"/>
+  <rect x="0.5" y="0.5" width="104" height="98" fill="none" stroke="#e5e0d2" stroke-width="0.3"/>
+
+  <!-- ===== 로고 + 브랜드 소개 ===== -->
+  <image x="9" y="9" width="24" height="9.4"
+         xlink:href="data:image/png;base64,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"/>
+
+  <text font-family="'EBS훈민정음새론','Malgun Gothic',sans-serif" fill="#5f574c">
+    <tspan x="9" y="26" font-size="2.7">고순은 전국의 들깨를 직접 찾아다니는 들깨연구가입니다.</tspan>
+    <tspan x="9" y="30.4" font-size="2.7">소량씩 자주 착유해 가장 신선한 상태 그대로 보내드립니다.</tspan>
+  </text>
+  <text x="9" y="36.4" font-family="'EBS훈민정음새론','Malgun Gothic',sans-serif"
+        font-size="2.7" font-weight="700" fill="#ea4c36">— 세상에서 가장 신선한 들기름</text>
+
+  <!-- 가로 구분선 -->
+  <line x1="9" y1="42" x2="96" y2="42" stroke="#e5e0d2" stroke-width="0.35"/>
+
+  <!-- ===== 이번 추석 3종 ===== -->
+  <text x="9" y="49" font-family="'EBS훈민정음새론','Malgun Gothic',sans-serif"
+        font-size="2.4" letter-spacing="0.35" fill="#8a8172">이번 추석, 고순의 세 가지</text>
+
+  <!-- 01 -->
+  <text x="9" y="57" font-family="'EBS훈민정음새론','Malgun Gothic',sans-serif"
+        font-size="3" font-weight="700" fill="#ea4c36">01</text>
+  <text x="16" y="57" font-family="'EBS훈민정음새론','Malgun Gothic',sans-serif"
+        font-size="3" font-weight="700" fill="#36302c">아, 향긋해 들기름</text>
+  <text x="16" y="61.6" font-family="'EBS훈민정음새론','Malgun Gothic',sans-serif"
+        font-size="2.4" fill="#5f574c">고순의 시그니처. 들깨 본연의 향긋함과 긴 여운을 살린 들기름.</text>
+
+  <!-- 02 -->
+  <text x="9" y="70.5" font-family="'EBS훈민정음새론','Malgun Gothic',sans-serif"
+        font-size="3" font-weight="700" fill="#ea4c36">02</text>
+  <text x="16" y="70.5" font-family="'EBS훈민정음새론','Malgun Gothic',sans-serif"
+        font-size="3" font-weight="700" fill="#36302c">고순 햇참기름</text>
+  <text font-family="'EBS훈민정음새론','Malgun Gothic',sans-serif" font-size="2.4" fill="#5f574c">
+    <tspan x="16" y="75.1">2026년 햇참깨의 신선함을 더해 맑은 풍미를 살린 참기름.</tspan>
+    <tspan x="16" y="78.7">8월이 제철인 참깨, 딱 지금만 만날 수 있는 신선함.</tspan>
+  </text>
+
+  <!-- 03 -->
+  <text x="9" y="87" font-family="'EBS훈민정음새론','Malgun Gothic',sans-serif"
+        font-size="3" font-weight="700" fill="#ea4c36">03</text>
+  <text x="16" y="87" font-family="'EBS훈민정음새론','Malgun Gothic',sans-serif"
+        font-size="3" font-weight="700" fill="#36302c">들깨오란다</text>
+  <text x="16" y="91.6" font-family="'EBS훈민정음새론','Malgun Gothic',sans-serif"
+        font-size="2.4" fill="#5f574c">설탕을 사용하지 않고 들깨가 듬뿍 들어간 고소한 들깨오란다.</text>
+
+</svg>
