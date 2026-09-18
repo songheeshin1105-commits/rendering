@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[고순] 참기름·참들기름세트 — 인스타 캐러셀</title>
+<style>
+  @font-face{font-family:'Saeron';src:url('../brand-font/EBS훈민정음새론L.ttf');font-weight:300;font-display:swap;}
+  @font-face{font-family:'Saeron';src:url('../brand-font/EBS훈민정음새론R.ttf');font-weight:400;font-display:swap;}
+  @font-face{font-family:'Saeron';src:url('../brand-font/EBS훈민정음새론SB.ttf');font-weight:700;font-display:swap;}
+  @font-face{font-family:'Pretendard';src:url('../brand-font/PretendardVariable.ttf');font-weight:100 900;font-display:swap;}
+  @font-face{font-family:'Mendl';src:url('../brand-font/Mendl_Sans_Dawn_Regular.otf');font-weight:400;font-display:swap;}
+  @font-face{font-family:'Mendl';src:url('../brand-font/Mendl_Sans_Dawn_Medium.otf');font-weight:500;font-display:swap;}
+
+  :root{
+    --main:#e4dfac; --sub1:#cad3cf; --sub2:#36302c; --bg:#fefcf6; --accent:#ea4c36;
+    --body:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;
+    --disp:'Saeron','Pretendard',sans-serif;
+    --latin:'Mendl',serif;
+  }
+  *{box-sizing:border-box;margin:0;}
+  body{background:var(--bg);color:var(--sub2);font-family:var(--body);-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;display:block;}
+  .page{width:1080px;margin:0 auto;}
+
+  .slide{width:1080px;height:1350px;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+  .slide .tag{font-family:var(--latin);font-size:22px;letter-spacing:.22em;text-transform:uppercase;opacity:.85;}
+  .slide .disp{font-family:var(--disp);font-weight:700;letter-spacing:-.01em;line-height:1.22;}
+
+  /* 1. 커버 */
+  .s1{background:#8fa3b8;}
+  .s1 img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .s1 .overlay{position:relative;z-index:1;margin-top:auto;padding:64px 72px 96px;background:linear-gradient(0deg,rgba(10,10,10,.78),rgba(10,10,10,.1) 60%,rgba(10,10,10,0) 82%);color:#fff;}
+  .s1 .tag{color:#fff;opacity:.85;}
+  .s1 h1{font-size:76px;margin-top:20px;}
+  .s1 .en{font-family:var(--latin);font-size:24px;letter-spacing:.1em;opacity:.85;margin-top:18px;}
+
+  /* 1b. 커버 (참깨 클로즈업 원형 뱃지) */
+  .s1b{background:#8fa3b8;}
+  .s1b img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .s1b .badge{position:absolute;top:56px;right:56px;width:220px;height:220px;border-radius:50%;overflow:hidden;border:4px solid rgba(255,255,255,.92);box-shadow:0 6px 20px rgba(0,0,0,.35);z-index:2;}
+  .s1b .badge img{width:100%;height:100%;object-fit:cover;}
+  .s1b .overlay{position:relative;z-index:1;margin-top:auto;padding:64px 72px 96px;background:linear-gradient(0deg,rgba(10,10,10,.78),rgba(10,10,10,.1) 60%,rgba(10,10,10,0) 82%);color:#fff;}
+  .s1b .tag{color:#fff;opacity:.85;}
+  .s1b h1{font-size:76px;margin-top:20px;}
+  .s1b .limited{display:inline-block;margin-top:16px;background:var(--accent);color:#fff;font-weight:700;font-size:20px;letter-spacing:.04em;padding:8px 20px;border-radius:999px;}
+
+  /* 1c. 커버 (라벨 클로즈업 뱃지 + 한정수량) */
+  .s1c{background:#8fa3b8;}
+  .s1c img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .s1c .badge{position:absolute;top:56px;right:56px;width:220px;height:220px;border-radius:50%;overflow:hidden;border:4px solid rgba(255,255,255,.92);box-shadow:0 6px 20px rgba(0,0,0,.35);z-index:2;}
+  .s1c .badge img{width:100%;height:100%;object-fit:cover;}
+  .s1c .limited-badge{position:absolute;top:290px;right:56px;width:220px;text-align:center;z-index:2;background:var(--accent);color:#fff;font-weight:700;font-size:22px;letter-spacing:.04em;padding:10px 0;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.3);}
+  .s1c .overlay{position:relative;z-index:1;margin-top:auto;padding:64px 72px 96px;background:linear-gradient(0deg,rgba(10,10,10,.78),rgba(10,10,10,.1) 60%,rgba(10,10,10,0) 82%);color:#fff;}
+  .s1c .tag{color:#fff;opacity:.85;}
+  .s1c h1{font-size:76px;margin-top:20px;}
+  .s1c .en{font-family:var(--latin);font-size:24px;letter-spacing:.1em;opacity:.85;margin-top:18px;}
+  .s1b .en{font-family:var(--latin);font-size:24px;letter-spacing:.1em;opacity:.85;margin-top:18px;}
+
+  /* 2. 참깨밭 */
+  .s2{background:#3a4a35;}
+  .s2 img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .s2 .overlay{position:relative;z-index:1;margin-top:auto;padding:64px 72px 200px;background:linear-gradient(0deg,rgba(10,10,10,.82) 40%,rgba(10,10,10,.6) 70%,rgba(10,10,10,0) 100%);color:#fff;text-align:center;}
+  .s2 .big{font-family:var(--disp);font-weight:700;font-size:150px;line-height:1;}
+  .s2 .cap{font-family:var(--disp);font-weight:700;font-size:56px;line-height:1.4;margin-top:16px;}
+  .s2 .sub{font-size:30px;line-height:1.7;margin-top:26px;opacity:.92;}
+  .s2 .sub2{font-size:30px;line-height:1.7;margin-top:34px;opacity:.92;}
+
+  /* 2-2. 참깨 풍년 스토리 */
+  .s2b{background:#3a4a35;}
+  .s2b img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .s2b .overlay{position:relative;z-index:1;margin-top:auto;padding:56px 64px 64px;background:linear-gradient(0deg,rgba(10,10,10,.84) 45%,rgba(10,10,10,.55) 75%,rgba(10,10,10,0) 100%);color:#fff;text-align:left;}
+  .s2b .cap{font-family:var(--disp);font-weight:700;font-size:68px;line-height:1.18;}
+  .s2b .sub{font-size:21px;line-height:1.6;margin-top:20px;opacity:.9;}
+  .s2b .sub.lead{font-family:var(--disp);font-weight:700;font-size:30px;line-height:1.5;opacity:1;margin-top:24px;}
+  .s2b .sub.strong{font-family:var(--disp);font-weight:700;font-size:26px;opacity:1;margin-top:26px;}
+  .s2b .sub.cta{font-weight:600;font-size:23px;opacity:1;margin-top:28px;}
+
+  /* 2-2b. 참깨 풍년 스토리 (배경만 클로즈업으로 교체) */
+  .s2b2{background:#3a4a35;}
+  .s2b2 img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .s2b2 .overlay{position:relative;z-index:1;margin-top:auto;padding:56px 64px 64px;background:linear-gradient(0deg,rgba(10,10,10,.84) 45%,rgba(10,10,10,.55) 75%,rgba(10,10,10,0) 100%);color:#fff;text-align:left;}
+  .s2b2 .cap{font-family:var(--disp);font-weight:700;font-size:68px;line-height:1.18;}
+  .s2b2 .sub{font-size:21px;line-height:1.6;margin-top:20px;opacity:.9;}
+  .s2b2 .sub.lead{font-family:var(--disp);font-weight:700;font-size:30px;line-height:1.5;opacity:1;margin-top:24px;}
+  .s2b2 .sub.strong{font-family:var(--disp);font-weight:700;font-size:26px;opacity:1;margin-top:26px;}
+  .s2b2 .sub.cta{font-weight:600;font-size:23px;opacity:1;margin-top:28px;}
+
+  /* 2-3. 반가운 소식 + CTA */
+  .s2c{background:#5a4a3a;}
+  .s2c img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .s2c .overlay{position:relative;z-index:1;margin-top:auto;padding:64px 64px 80px;background:linear-gradient(0deg,rgba(10,10,10,.88) 0%,rgba(10,10,10,.88) 78%,rgba(10,10,10,.35) 94%,rgba(10,10,10,0) 100%);color:#fff;text-align:left;}
+  .s2c .sub{font-size:26px;line-height:1.6;margin-top:22px;opacity:.92;}
+  .s2c .sub.cta{font-family:var(--disp);font-weight:700;font-size:30px;opacity:1;margin-top:30px;}
+
+  /* 2-3b. 반가운 소식 + CTA (참깨꽃밭 배경) */
+  .s2c2{background:#5a4a3a;}
+  .s2c2 img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .s2c2 .overlay{position:relative;z-index:1;margin-top:auto;padding:64px 64px 80px;background:linear-gradient(0deg,rgba(10,10,10,.88) 0%,rgba(10,10,10,.88) 78%,rgba(10,10,10,.35) 94%,rgba(10,10,10,0) 100%);color:#fff;text-align:left;}
+  .s2c2 .sub{font-size:26px;line-height:1.6;margin-top:22px;opacity:.92;}
+  .s2c2 .sub.cta{font-family:var(--disp);font-weight:700;font-size:30px;opacity:1;margin-top:30px;}
+
+  /* 3. 제철/신선함 — 글자가 병 앞으로 튀어나오는 레이어 구성 */
+  .s3{background:#111;color:#f4efe1;align-items:center;justify-content:center;padding:0 40px;}
+  .s3 img{position:relative;z-index:1;max-height:740px;width:auto;margin:150px auto 0;}
+  .s3 .bigtext{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;font-family:var(--disp);font-weight:700;font-size:128px;line-height:1.2;letter-spacing:-.02em;color:#f6f4a7;text-align:center;white-space:nowrap;padding:14px 40px;border-radius:24px;background:rgba(10,10,10,.4);}
+  .s3 .bigtext .hero{font-size:1.55em;}
+  .s3 .txt{position:relative;z-index:2;text-align:center;margin-top:40px;}
+  .s3 .tag{color:var(--accent);font-weight:600;}
+  .s3 h2{font-size:32px;margin-top:10px;color:#fff;opacity:.85;font-weight:400;}
+
+  /* 3-5. 생산 현장 — 실제 착유/병입 사진 */
+  .sproc{background:#000;}
+  .sproc img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .sproc .overlay{position:relative;z-index:1;margin-top:auto;padding:56px 64px 84px;background:linear-gradient(0deg,rgba(10,10,10,.72),rgba(10,10,10,0) 62%);color:#fff;}
+  .sproc .tag{color:var(--accent);font-weight:600;font-size:30px;}
+  .sproc p.sub{font-size:28px;line-height:1.55;margin-top:22px;opacity:.9;}
+
+  /* 4. 세트 구성 */
+  .s4{background:linear-gradient(180deg,#aebdc9 0%,#5b6b7c 55%,#1b222c 100%);align-items:center;justify-content:center;}
+  .s4 .overlay{position:relative;z-index:1;padding:0 72px;color:#fff;text-align:center;}
+  .s4 .tag{color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.5);}
+  .s4 h2{font-size:44px;margin-top:16px;text-shadow:0 2px 14px rgba(0,0,0,.55);}
+  .s4 .en{font-family:var(--latin);font-size:22px;opacity:.85;margin-top:14px;}
+  .s4 p.sub{font-size:24px;line-height:1.7;margin-top:18px;opacity:.95;text-shadow:0 1px 10px rgba(0,0,0,.5);}
+
+  /* 4-2. 매듭 디테일 */
+  .s4b{background:#c9c2b4;}
+  .s4b img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:38% center;}
+  .s4b .overlay{position:relative;z-index:1;margin-top:auto;padding:0 72px 96px;color:#fff;text-align:center;}
+  .s4b p.sub{display:inline-block;font-family:var(--disp);font-weight:700;font-size:29px;line-height:1.55;background:rgba(10,10,10,.6);padding:22px 36px;border-radius:16px;}
+
+  /* 5. 포장 */
+  .s5{background:#8fa3b8;}
+  .s5 img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;}
+  .s5 .overlay{position:relative;z-index:1;margin-top:auto;padding:64px 72px 88px;background:linear-gradient(0deg,rgba(20,20,20,.6),rgba(20,20,20,0) 65%);color:#fff;}
+  .s5 h2{font-size:40px;line-height:1.6;}
+  .s5 p{font-size:26px;line-height:1.7;margin-top:20px;max-width:760px;opacity:.94;}
+  .s5 p.line{margin-top:22px;}
+  .s5 p.line:first-child{margin-top:0;}
+  .s5 .b{font-family:var(--disp);font-weight:700;opacity:1;}
+  .s5 p.lead{font-family:var(--disp);font-weight:700;font-size:38px;line-height:1.4;opacity:1;}
+
+  /* 5-2. 병 제품샷 + 선물 카피 */
+  .sbottle{background:#8fa3b8;}
+  .sbottle img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .sbottle .overlay{position:relative;z-index:1;padding:72px 72px 96px;background:linear-gradient(180deg,rgba(10,10,10,.62) 0%,rgba(10,10,10,.25) 55%,rgba(10,10,10,0) 100%);color:#fff;text-align:center;}
+  .sbottle .tag{color:#fff;opacity:.85;letter-spacing:.18em;font-size:20px;}
+  .sbottle h2{font-size:56px;line-height:1.3;margin-top:14px;text-shadow:0 2px 14px rgba(0,0,0,.3);}
+  .sbottle .sub{font-size:26px;line-height:1.6;margin-top:14px;opacity:.95;}
+
+  /* 6. CTA */
+  .s6{background:var(--sub2);color:var(--main);align-items:center;justify-content:center;text-align:center;padding:0 80px;}
+  .s6 img.logo{width:140px;margin:0 auto 40px;filter:invert(1) brightness(2);}
+  .s6 h2{font-size:56px;color:#fff;}
+  .s6 .msg{font-family:var(--disp);font-weight:700;font-size:32px;line-height:1.6;color:#fff;}
+  .s6 .msg + .msg{margin-top:22px;}
+  .s6 .en{font-family:var(--latin);font-size:24px;opacity:.7;margin-top:28px;}
+  .s6 .cta{margin-top:56px;border:1.5px solid rgba(255,255,255,.5);border-radius:999px;padding:18px 44px;font-size:24px;letter-spacing:.04em;color:#fff;}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- 1. 커버 -->
+<section class="slide s1">
+  <img class="bg" src="../products/들기름/images/참들기름세트.png" alt="참들기름세트 보자기 포장">
+  <div class="overlay">
+    <p class="tag">GOSOON Harvest 2026</p>
+    <h1 class="disp"><span style="color:#f6f4a7">1년에 딱 한 번,</span><br>지금만 나오는 햇참기름</h1>
+    <p class="en">Only now, only this season.</p>
+  </div>
+</section>
+
+<!-- 1b. 커버 (참깨 클로즈업 원형 뱃지) -->
+<section class="slide s1b">
+  <img class="bg" src="../products/들기름/images/참들기름세트.png" alt="참들기름세트 보자기 포장">
+  <div class="badge">
+    <img src="../products/참기름캐러셀용사진/참깨클로즈업.jpeg" alt="여물어가는 국산 참깨 클로즈업">
+  </div>
+  <div class="overlay">
+    <p class="tag">GOSOON Harvest 2026</p>
+    <h1 class="disp"><span style="color:#f6f4a7">1년에 딱 한 번,</span><br>지금만 나오는 햇참기름</h1>
+    <p class="limited">30병 한정</p>
+    <p class="en">Only now, only this season.</p>
+  </div>
+</section>
+
+<!-- 1c. 커버 (라벨 클로즈업 뱃지 + 한정수량) -->
+<section class="slide s1c">
+  <img class="bg" src="../products/들기름/images/참들기름세트.png" alt="참들기름세트 보자기 포장">
+  <div class="badge">
+    <img src="../products/들기름/images/햇참기름확대.png" alt="고순 햇참기름 라벨 클로즈업">
+  </div>
+  <p class="limited-badge">30병 한정</p>
+  <div class="overlay">
+    <p class="tag">GOSOON Harvest 2026</p>
+    <h1 class="disp"><span style="color:#f6f4a7">1년에 딱 한 번,</span><br>지금만 나오는 햇참기름</h1>
+    <p class="en">Only now, only this season.</p>
+  </div>
+</section>
+
+<!-- 2. 참깨밭 -->
+<section class="slide s2">
+  <img class="bg" src="../products/들기름/images/KakaoTalk_Photo_2026-09-14-19-12-35.jpeg" alt="고순 국산 참깨밭">
+  <div class="overlay">
+    <p class="cap">9월, 지금이<br>햇참깨의 계절!</p>
+    <p class="sub">충북 음성에서 자란 햇참깨를<br>발로 뛰어 힘들게 구해왔어요</p>
+    <p class="sub2">고온에서 오래 볶아 나타나는<br>특유의 스모키한 고소함은 없애고</p>
+    <p class="sub2">햇깨가 가진 신선함과 향긋함을 살려<br>저온 로스팅한 참기름이에요</p>
+  </div>
+</section>
+
+<!-- 2-2. 참깨 풍년 스토리 -->
+<section class="slide s2b">
+  <img class="bg" src="../products/들기름/images/KakaoTalk_Photo_2026-09-14-19-12-35.jpeg" alt="고순 국산 참깨밭">
+  <div class="overlay">
+    <p class="cap">9월, 지금이<br>햇참깨의 계절!</p>
+    <p class="sub lead">여러분만 아세요<br>올해 참깨는 풍년이래요</p>
+    <p class="sub">우리에게 참기름은 참 익숙하지만,<br>국내산 참깨는 구하기가 하늘의 별 따기예요.</p>
+    <p class="sub">수입산 참깨에 밀려<br>국내 참깨 농가는 점점 줄어들고,<br>국내산 참깨 자급률은 10%도 채 되지 않거든요.</p>
+    <p class="sub strong">그런데 올해는 참깨가 풍년이래요.</p>
+  </div>
+</section>
+
+<!-- 2-2b. 참깨 풍년 스토리 (참깨 클로즈업 배경) -->
+<section class="slide s2b2">
+  <img class="bg" src="../products/참기름캐러셀용사진/참깨클로즈업.jpeg" alt="여물어가는 국산 참깨 꼬투리 클로즈업">
+  <div class="overlay">
+    <p class="cap">9월, 지금이<br>햇참깨의 계절!</p>
+    <p class="sub lead">국내산 참깨의 풍년</p>
+    <p class="sub">우리에게 참기름은 참 익숙하지만,<br>국내산 참깨는 구하기가 하늘의 별 따기예요.</p>
+    <p class="sub">수입산 참깨에 밀려<br>국내 참깨 농가는 점점 줄어들고,<br>국내산 참깨 자급률은 10%도 채 되지 않거든요.</p>
+    <p class="sub strong">그런데 올해는 참깨가 풍년이래요.</p>
+  </div>
+</section>
+
+<!-- 2-3. 반가운 소식 + CTA -->
+<section class="slide s2c">
+  <img class="bg" src="../products/들기름/images/참깨.jpeg" alt="볶은 참깨 클로즈업">
+  <div class="overlay">
+    <p class="sub">매년<br>“올해도 작황이 안 좋대.”<br>하는 이야기만 듣다가<br>이렇게 반가운 소식이 또 있을까요.</p>
+    <p class="sub">제철을 맞은 참깨.<br>이때 아니면 또 1년을 기다려야 하니까요.</p>
+    <p class="sub cta">올해 수확한 참깨로 만든<br>햇참기름, 지금 만나보세요</p>
+  </div>
+</section>
+
+<!-- 2-3b. 반가운 소식 + CTA (참깨꽃밭 배경) -->
+<section class="slide s2c2">
+  <img class="bg" src="../products/참기름캐러셀용사진/참깨변경.png" alt="꽃이 핀 참깨밭">
+  <div class="overlay">
+    <p class="sub">매년<br>“올해도 작황이 안 좋대.”<br>하는 이야기만 듣다가<br>이렇게 반가운 소식이 또 있을까요.</p>
+    <p class="sub">제철을 맞은 참깨.<br>이때 아니면 또 1년을 기다려야 하니까요.</p>
+    <p class="sub cta">올해 수확한 참깨로 만든<br>햇참기름, 지금 만나보세요</p>
+  </div>
+</section>
+
+<!-- 3-1. 생산 현장: 빛깔 확인 -->
+<section class="slide sproc">
+  <img class="bg" src="../products/참기름캐러셀용사진/KakaoTalk_Photo_2026-09-14-19-36-40 004.jpeg" alt="갓 짜낸 참기름의 맑은 빛깔">
+  <div class="overlay">
+    <p class="tag">Fresh press</p>
+    <p class="sub">받자마자 향을 맡고, 생으로 한 숟가락 맛봐주세요.<br>제철 햇깨가 가진 맛을 가리는 고온 로스팅 대신,<br>저온에서 천천히 볶아 그 계절의 맛을 담았습니다.</p>
+    <p class="sub">햇깨의 신선함과 향긋함은 살리고,<br>어떤 음식에도 자연스럽게 어우러지는 고소한 기름이에요.</p>
+  </div>
+</section>
+
+
+<!-- 4. 세트 구성 -->
+<section class="slide s4">
+  <div class="overlay">
+    <p class="tag">Less, but sincere</p>
+    <h2 class="disp">포장을 더한다고<br>정성이 커지진 않습니다</h2>
+    <p class="sub">고순은 천 한 장, 매듭 하나로<br>마음을 전합니다.</p>
+  </div>
+</section>
+
+<!-- 4-2. 매듭 디테일 -->
+<section class="slide s4b">
+  <img class="bg" src="../products/참기름캐러셀용사진/KakaoTalk_Photo_2026-09-14-19-36-40 002.jpeg" alt="고순 스티커와 보자기 매듭 디테일">
+  <div class="overlay">
+    <p class="sub">매 년 선물세트를 받으면<br>막상 받을 때는 행복하지만<br>버리려면 아깝기도 하고,<br>처치곤란인 선물세트들..<br>어떻게 할까 고민하다가<br>과감하게 보자기포장만으로<br>정성을 담았습니다.</p>
+  </div>
+</section>
+
+<!-- 5. 포장 (무드컷) -->
+<section class="slide s5">
+  <img class="bg" src="../products/들기름/images/하나세트.jpeg" alt="보자기로 묶은 고순 선물 포장">
+  <div class="overlay">
+    <p class="line"><span class="b">이번 추석,</span><br>평범한 참기름 대신</p>
+    <p class="line lead"><span style="color:#f6f4a7">올해의 햇참기름</span>을 선물하세요.</p>
+    <p class="line">고순 햇참기름을<br><span class="b">정성 가득한 보자기 포장으로 준비했습니다.</span></p>
+  </div>
+</section>
+
+<!-- 5-2. 병 제품샷 + 선물 카피 -->
+<section class="slide sbottle">
+  <img class="bg" src="../products/참기름캐러셀용사진/참깨클로즈업.jpeg" alt="여물어가는 국산 참깨 꼬투리 클로즈업">
+  <div class="overlay">
+    <p class="tag">GOSOON HARVEST 2026</p>
+    <h2 class="disp">제철을 선물하세요</h2>
+    <p class="sub">1년에 딱 한 번,<br>지금만 나오는 햇참기름</p>
+  </div>
+</section>
+
+<!-- 6. CTA -->
+<section class="slide s6">
+  <img class="logo" src="../brand/logo/logo.png" alt="고순 로고">
+  <p class="msg">이번 추석,<br>평범한 참기름 대신 올해의 햇참기름을 선물하세요.</p>
+  <p class="msg">이번 햇참기름, 딱 30병만 준비했어요.<br>지금 놓치면 내년까지 기다려야 해요.</p>
+  <p class="en">GOSOON · Chuseok gift</p>
+  <p class="cta">프로필 링크에서 만나보세요</p>
+</section>
+
+</div>
+</body>
+</html>

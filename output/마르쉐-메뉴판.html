@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[고순] 마르쉐 메뉴판</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  @font-face{ font-family:'EBS훈민정음새론'; src:url('../brand-font/EBS훈민정음새론L.ttf'); font-weight:300; font-display:swap; }
+  @font-face{ font-family:'EBS훈민정음새론'; src:url('../brand-font/EBS훈민정음새론R.ttf'); font-weight:400; font-display:swap; }
+  @font-face{ font-family:'EBS훈민정음새론'; src:url('../brand-font/EBS훈민정음새론SB.ttf'); font-weight:700; font-display:swap; }
+
+  :root{
+    --paper:#f2e9d8; --ink:#3a3128; --moss:#6b7752; --brown:#8a6a45; --stamp:#b5432f;
+    --hand:'Gaegu',cursive; --f:'EBS훈민정음새론',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;}
+  body{background:#ddd; font-family:var(--f); -webkit-font-smoothing:antialiased;}
+
+  .page{
+    width:210mm; min-height:297mm; margin:16px auto; position:relative;
+    background-color:var(--paper); color:var(--ink); padding:20mm 16mm;
+    background-image:
+      radial-gradient(rgba(0,0,0,.05) 1px, transparent 1.2px);
+    background-size:5px 5px;
+  }
+  .page::before{
+    content:""; position:absolute; inset:8mm; border:2px solid var(--ink); border-radius:2px; pointer-events:none;
+  }
+
+  .top{text-align:center; margin-bottom:6mm;}
+  .top .brand{font-family:var(--hand); font-size:42px; font-weight:700; letter-spacing:.02em;}
+  .top .loc{font-family:var(--hand); font-size:16px; margin-top:2px;}
+  .top .loc:before, .top .loc:after{content:"·"; margin:0 8px; opacity:.6;}
+
+  .divider{border:none; border-top:2px dashed var(--ink); opacity:.35; margin:6mm 0;}
+
+  .headline{text-align:center; margin-bottom:8mm;}
+  .headline p{margin:0; font-family:var(--hand); font-size:24px; line-height:1.6; font-weight:700;}
+  .headline .quote{color:var(--stamp);}
+
+  .cat{margin-bottom:9mm;}
+  .cat-head{display:flex; align-items:center; gap:10px; margin-bottom:6px;}
+  .cat-head svg{width:26px; height:26px; flex:none;}
+  .cat h2{margin:0; font-family:var(--hand); font-size:24px; font-weight:700;}
+  .cat h2 .sub{font-family:var(--f); font-size:12.5px; font-weight:400; color:var(--brown); margin-left:6px;}
+  .cat p.desc{margin:6px 0 10px; font-size:13.5px; line-height:1.8; color:var(--ink); opacity:.85;}
+
+  .item-row{display:flex; align-items:baseline; font-size:15.5px; padding:5px 0 5px 34px;}
+  .item-row .name{white-space:nowrap;}
+  .item-row .lead{flex:1; border-bottom:2px dotted var(--ink); opacity:.4; margin:0 8px; transform:translateY(-4px);}
+  .item-row .price{font-family:var(--hand); font-weight:700; white-space:nowrap; font-size:17px;}
+
+  .foot{position:absolute; left:0; right:0; bottom:14mm; text-align:center; font-family:var(--hand); font-size:14px; color:var(--brown);}
+
+  @media print{
+    body{background:#fff;}
+    .page{margin:0; box-shadow:none;}
+    @page{ size:A4; margin:0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="top">
+    <div class="brand">고순</div>
+    <div class="loc">고순 서울 마포 ↗</div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="headline">
+    <p>고소함 뒤에 숨겨진 진짜 들깨의 향<br><span class="quote">'향긋함'</span>을 느낄 수 있는 들기름이에요!</p>
+  </div>
+
+  <div class="cat">
+    <div class="cat-head">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.6" stroke-linecap="round"><path d="M12 21c0-6 1-10 6-14"/><path d="M12 21c0-6-1-10-6-14"/><path d="M6 7c3 1 5 3 6 6"/><path d="M18 7c-3 1-5 3-6 6"/></svg>
+      <h2>들기름</h2>
+    </div>
+    <div class="item-row"><span class="name">아향긋해들기름</span><span class="lead"></span><span class="price">18,000원</span></div>
+    <div class="item-row"><span class="name">2026 햇참기름</span><span class="lead"></span><span class="price">20,000원</span></div>
+  </div>
+
+  <div class="cat">
+    <div class="cat-head">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.6" stroke-linecap="round"><path d="M4 12a8 8 0 0 0 16 0z"/><path d="M2 12h20"/><path d="M12 4v2"/></svg>
+      <h2>9월의 들기름 페어링 한상<span class="sub">향긋한 들기름 × 호박잎</span></h2>
+    </div>
+    <p class="desc">9월에 소개할 들기름의 '향긋함'과 페어링할 재료는 '호박잎'입니다. 엄마가 직접 수확한 호박잎을 넣은 솥밥과 할머니 특별 레시피 들기름강된장! 솥밥에 들기름을 휘휘 둘러, 향긋한 풍미를 천천히 맛보세요. 여기에 즉석 들기름두부구이와 11년 숙성 간장까지, 한 상 차려 마르쉐에서 기다릴게요.</p>
+    <div class="item-row"><span class="name">솥밥 들기름 페어링 한상</span><span class="lead"></span><span class="price">17,500원</span></div>
+  </div>
+
+  <div class="cat">
+    <div class="cat-head">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M9 10h.01M15 9h.01M12 14h.01M9.5 15.5h.01"/></svg>
+      <h2>들깨 오란다</h2>
+    </div>
+    <p class="desc">직접 만든 들깨 오란다: 당을 최소화하고, 올리고당으로만 단 맛을 냈습니다. 부드럽게 바삭해서 이에 끼지도 않고, 입천장이 까지지도 않는 오란다에요.</p>
+    <div class="item-row"><span class="name">오란다3SET</span><span class="lead"></span><span class="price">15,000원</span></div>
+    <div class="item-row"><span class="name">오란단 단품</span><span class="lead"></span><span class="price">5,500원</span></div>
+  </div>
+
+  <div class="foot">재료 소진 시 조기 마감될 수 있어요 :)</div>
+</div>
+
+</body>
+</html>
